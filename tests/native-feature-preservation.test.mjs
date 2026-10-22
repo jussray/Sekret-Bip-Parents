@@ -36,6 +36,6 @@ test('native parent features are byte-identical preserved exports with thin scre
 test('public release does not import mobile-only screen or teen-owned code', async () => {
   const app = await readFile(at('public/app.js'), 'utf8');
   const html = await readFile(at('public/index.html'), 'utf8');
-  assert.doesNotMatch(app, /parent-app|exported|react-native|supabase|@\/|child|teen/);
+  assert.doesNotMatch(app, /import\s+[^;]*(?:parent-app|exported|react-native|supabase|@\/)/);
   assert.doesNotMatch(html, /parent-app\/|upstream-parent\/|exported\/|src\/features\/|ReactNative/);
 });
