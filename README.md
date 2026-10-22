@@ -76,6 +76,12 @@ The verifier fails on missing or edited protected files, unexpected additions in
 
 Full policy: [docs/SAUCE_GUARD.md](docs/SAUCE_GUARD.md).
 
+## Native guardian verification and Bridge review
+
+The independently built parent-native preview now requires live Supabase authentication and server-owned `VERIFIED_GUARDIAN` state, completed parent onboarding, and the guardian-verification RPC **before any app tabs render**. It hides navigation on sign-out and background and re-verifies on resume. No production parent hostname is wired to this preview. See [Parent auth gate](docs/PARENT_AUTH_GATE.md).
+
+A **nonapplied** security proposal for the older Bridge Signals parent-read policy is documented in [the Bridge legacy policy review](docs/BRIDGE_SIGNALS_POLICY_REVIEW.md). This is not a production database change or verification of actual child-data access.
+
 ## Privacy and safety
 
 The parent experience may show only specific teen content intentionally shared with the named, currently authorized guardian. Parent account linkage does **not** authorize browsing private journals, unshared voice notes, Circle posts, mood history, companion memory, or safety notes.
