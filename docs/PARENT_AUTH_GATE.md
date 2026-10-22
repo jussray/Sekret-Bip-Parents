@@ -27,3 +27,7 @@ Even after guardian verification, Bridge and Parent Circle remain locked. The ba
 Run native npm test, TypeScript typecheck, and Expo web export on the exact PR head. Unit tests validate anonymous/teen/rejected guardian cases, server errors, positive verified identity, and no app render before verification. Production email delivery and end-to-end RLS are not verified by these checks.
 
 No production database changes, deployment, DNS changes, merge, or real-family data changes are in this slice.
+
+## Invalidation on background/resume
+
+AppState background/inactive events immediately hide the entire parent navigation and invalidate outstanding checks. On foreground, revalidate identity, parent profile, server-owned verification state, and guardian RPC before any tabs can return. This is in addition to sign-out invalidation; no persisted guardian access token or cached entitlement is granted.

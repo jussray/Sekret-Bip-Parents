@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Tabs } from 'expo-router';
-import { Pressable, Text } from 'react-native';
+import { AppState, Pressable, Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { getParentClient } from '../src/features/auth/client';
 import { ParentEntry } from '../src/features/auth/ParentEntry';
@@ -47,8 +47,17 @@ export default function ParentLayout() {
         Promise.resolve().then(() => { void refresh(); });
       }
     }) ?? { data: { subscription: null } };
+    const appState = AppState.addEventListener('change', (state) => {
+      if (state === 'active') {
+        void refresh(); // all grants and guardian verification may have changed
+      } else {
+        ++generation.current;
+        setDecision(null); // hide all tabs immediately on background
+      }
+    });
     return () => {
       ++generation.current;
+      appState.remove();
       subscription?.unsubscribe();
     };
   }, [refresh]);
