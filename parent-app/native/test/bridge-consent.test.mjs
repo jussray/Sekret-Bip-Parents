@@ -5,7 +5,6 @@ import { readConsentedBridgeSummary } from '../src/features/bridge/consentedSumm
 const parentId = '33333333-3333-4333-8333-333333333333';
 const teenId = '22222222-2222-4222-8222-222222222222';
 const shareId = '11111111-1111-4111-8111-111111111111';
-const nowMs = Date.parse('2026-10-22T12:00:00Z');
 
 function fixtures(overrides = {}) {
   const grant = {
@@ -14,7 +13,7 @@ function fixtures(overrides = {}) {
     parent_user_id: parentId,
     status: 'ready',
     revoked_at: null,
-    expires_at: '2026-10-25T00:00:00Z',
+    expires_at: '2099-10-25T00:00:00Z',
     ...overrides.grant,
   };
   const linked = { status: 'active', is_active: true, expires_at: null, ...overrides.link };
@@ -74,7 +73,7 @@ test('invalid share IDs are denied before any network or profile access', async 
 
 test('only preapproved summary fields are returned for exact named recipient', async () => {
   const x = fixtures();
-  const result = await readConsentedBridgeSummary(x.client, shareId, () => nowMs);
+  const result = await readConsentedBridgeSummary(x.client, shareId);
   assert.deepEqual(result, {
     kind: 'shared',
     summary: {
@@ -115,7 +114,7 @@ test('wrong parent, missing relationship, revoked and expired grants all deny ac
   ];
   for (const values of blocked) {
     const x = fixtures(values);
-    assert.deepEqual(await readConsentedBridgeSummary(x.client, shareId, () => nowMs), { kind: 'locked' }, JSON.stringify(values));
+    assert.deepEqual(await readConsentedBridgeSummary(x.client, shareId), { kind: 'locked' }, JSON.stringify(values));
   }
 });
 
@@ -126,7 +125,7 @@ test('mid-read revocation, unlink and sign-in switch suppress loaded summary', a
     { users: [parentId, teenId] },
   ];
   for (const value of cases) {
-    assert.deepEqual(await readConsentedBridgeSummary(fixtures(value).client, shareId, () => nowMs), { kind: 'locked' });
+    assert.deepEqual(await readConsentedBridgeSummary(fixtures(value).client, shareId), { kind: 'locked' });
   }
 });
 
@@ -137,6 +136,13 @@ test('untrusted summary shapes cannot leak unexpected records', async () => {
     { themes: Array(21).fill('x'), conversation_starters: [], limitations: '' },
     { themes: [], conversation_starters: [], limitations: null },
   ]) {
-    assert.deepEqual(await readConsentedBridgeSummary(fixtures({ summary: value }).client, shareId, () => nowMs), { kind: 'locked' });
+    assert.deepEqual(await readConsentedBridgeSummary(fixtures({ summary: value }).client, shareId), { kind: 'locked' });
   }
+});
+
+test('system clock is not caller-controlled in the exposed Bridge API', () => {
+  // Changing a client-supplied timestamp must not be an authorization control.
+  const source = readFileSync(new URL('../src/features/bridge/consentedSummary.ts', import.meta.url), 'utf8');
+  assert.doesNotMatch(source, /now:\s*\(\)\s*=>\s*number/);
+  assert.match(source, /Date\.now\(\)/);
 });

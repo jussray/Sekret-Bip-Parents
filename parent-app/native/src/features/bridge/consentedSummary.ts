@@ -59,7 +59,6 @@ function safeSummary(row: unknown): ParentSafeBridgeSummary | null {
 export async function readConsentedBridgeSummary(
   client: SupabaseClient,
   shareId: string,
-  now: () => number = Date.now,
 ): Promise<BridgeReadResult> {
   const locked: BridgeReadResult = { kind: 'locked' };
   if (!UUID.test(shareId)) return locked;
@@ -68,7 +67,7 @@ export async function readConsentedBridgeSummary(
     const identity = await verifyCurrentGuardian(client);
     if (identity.kind !== 'guardian') return locked;
     const userId = identity.userId;
-    const when = now();
+    const when = Date.now();
 
     // First check the named recipient's teen-created, ready-to-view share.
     const grantResult = await client.from('bridge_share_requests')
@@ -88,7 +87,7 @@ export async function readConsentedBridgeSummary(
       .eq('status', 'active')
       .eq('is_active', true)
       .maybeSingle();
-    if (linkResult.error || !activeLink(linkResult.data as Link | null, now())) return locked;
+    if (linkResult.error || !activeLink(linkResult.data as Link | null, Date.now())) return locked;
 
     const result = await client.from('bridge_summaries')
       .select('themes,conversation_starters,limitations')
@@ -106,7 +105,7 @@ export async function readConsentedBridgeSummary(
       .eq('id', shareId)
       .eq('parent_user_id', userId)
       .maybeSingle();
-    if (again.error || !activeGrant(again.data as ShareGrant | null, userId, shareId, now())) return locked;
+    if (again.error || !activeGrant(again.data as ShareGrant | null, userId, shareId, Date.now())) return locked;
     const lastGrant = again.data as ShareGrant;
     if (lastGrant.teen_user_id !== grant.teen_user_id) return locked;
 
@@ -117,7 +116,7 @@ export async function readConsentedBridgeSummary(
       .eq('status', 'active')
       .eq('is_active', true)
       .maybeSingle();
-    if (finalLink.error || !activeLink(finalLink.data as Link | null, now())) return locked;
+    if (finalLink.error || !activeLink(finalLink.data as Link | null, Date.now())) return locked;
 
     // A stale or replaced sign-in must not return content to a later account.
     const lastIdentity = await verifyCurrentGuardian(client);
