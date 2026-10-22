@@ -12,6 +12,7 @@ test('RLS test runner is staging-only, read-only and denies secret keys', () => 
   assert.match(code, /head: true, count: 'exact'/);
   assert.match(code, /is_verified_guardian/);
   assert.match(code, /client\.auth\.signOut\(\)/);
-  assert.doesNotMatch(code, /\.insert\(|\.update\(|\.upsert\(|\.delete\(|\.rpc\('create|service_role/i);
+  assert.doesNotMatch(code, /\.insert\(|\.update\(|\.upsert\(|\.delete\(|\.rpc\('create/i);
+  assert.doesNotMatch(code, /['\"]sb_secret_[A-Za-z0-9]+['\"]/);
   assert.match(code, /BIP_STAGE_SHARE_A_UNLINKED/);
 });
