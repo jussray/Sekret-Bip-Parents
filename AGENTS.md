@@ -1,13 +1,19 @@
-# AGENTS — Se’kret Bip Parent Side
+# Se’kret Bip Parent Side — agent operating instructions
 
-Founder direction (2026-10-22): `jussray/Sekret-Bip-Parents` is the dedicated Parent Side repo. `jussray/Sekret-Bip` remains teen/shared platform authority. See `parent-app/EXPORT_MANIFEST.json` for the pinned code export.
+## Current founder decision
+This repository is the dedicated **parent-side** implementation repository for Se’kret Bip. The former legacy snapshot classification is superseded for **new parent-only work** by the owner's explicit 2026-10-22 instruction. Original files and the former archive guidance remain preserved as historical source only. Read `PARENT_APP_ROLE.md` and `docs/PARENT_EXPORT_MANIFEST.md` first.
 
-Existing root code is retained historical material. The original agent instructions are preserved in `legacy/AGENTS.pre-parent-export.md` and are still relevant to the old snapshot, but no longer define the whole repo as a no-use archive.
+## Scope and authority
+- Target repo: `jussray/Sekret-Bip-Parents`; teen app remains `jussray/Sekret-Bip`.
+- Public-domain intent: `parent.sekretbip.net`; exact runtime state comes from Cloudflare and a production URL probe, not repository prose.
+- Parent source snapshot under `upstream-parent/` is **reference source**, not a standalone runnable app.
+- The independent `site/` builds an explicitly limited public parent entry site. Treat it as **not authenticated** and **not an authorized Parent Window**.
+- Do not import unrelated teen routes, private journals, private voice, companion chat/memory, private statistics or real account data.
+- No secrets, privileged tokens, RLS bypass, parent surveillance, link-by-presence access, or age-gate bypass.
+- A parent link is not blanket teen-content authorization. Auth, RLS, recipient, item, and revocation checks are mandatory before any shared content is ever exposed.
+- Preserve the historical legacy files and instructions. Do not delete, merge, deploy or change unrelated products without exact authorization; use verified deployment gates.
 
-- Inspect repository/branch/SHA and confirm precise authority before mutation.
-- Keep legacy contents, do not delete, merge, publish, migrate data, or deploy without specific approval.
-- Parent UI source is not a working standalone app. Do not claim the live domain is serving a functional Parent product.
-- Do not bring teen-only code or any teen/parent private content, secrets, or privileged tokens across.
-- Every parent read must be enforced by server-side role, consent, verified relationship and RLS, including revocation/unlink.
-- Require build, tests, browser/real-account authorization, provider route and HTTPS evidence before flipping parent live domain.
-- Apply 5W1H and preserve current evidence vs historical provenance.
+## Verification
+- On changes to `site/`, run `npm test` and `npm run build:pages` (they require only Node.js built-ins).
+- Check CI against the exact commit head and the actual Cloudflare Pages production deployment. Do not claim private features or child-linked data function based on a static page or HTTP 200.
+- Use branch/commit provenance, source repo main revision, deployment target, and rollback plan for all cross-repo work.

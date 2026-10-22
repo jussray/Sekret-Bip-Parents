@@ -1,0 +1,19 @@
+name: Parent entry checks
+on:
+  push:
+    branches: ['feat/parent-side-export-20261022', main]
+    paths: ['site/**', 'tests/**', 'package.json', '.github/workflows/parent-entry-checks.yml', 'README.md', 'AGENTS.md']
+  pull_request:
+    paths: ['site/**', 'tests/**', 'package.json', 'README.md', 'AGENTS.md']
+permissions:
+  contents: read
+jobs:
+  static-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - run: npm run build:pages
