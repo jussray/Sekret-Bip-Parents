@@ -1,71 +1,31 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#160e2a">
-  <meta name="description" content="Se'kret Bip Parents — support without surveillance. Practical conversation tools and a consent-first Parent Bridge.">
-  <title>Se’kret Bip Parents | Support without surveillance</title>
-  <link rel="stylesheet" href="/styles.css">
-  <script type="module" src="/app.js"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a1513">
+<meta name="description" content="Se’kret Bip Parent Side. A quiet beginning for parents, guardians and trusted adults.">
+<title>Se’kret Bip Parents | Parent Front Door</title>
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="sky" aria-hidden="true"><span></span><span></span><span></span></div>
-  <div class="app-shell">
-    <header class="topbar">
-      <a class="brand" href="#home" aria-label="Se’kret Bip Parents home"><span class="brand-mark">✦</span><span>Se’kret <b>Bip</b><small>PARENTS</small></span></a>
-      <nav class="topnav" aria-label="Main"><a href="#home">Home</a><a href="#kits">Conversation kits</a><a href="#bridge">Parent Bridge</a><a href="#support">Support</a></nav>
-      <a class="main-app" href="https://app.sekretbip.net" rel="noopener noreferrer">Main Bip ↗</a>
-    </header>
-    <main id="main">
-      <section id="home" class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="sparkle">✧</span> A softer way to show up</div>
-          <h1 id="hero-title">Less pressure.<br><em>More connection.</em></h1>
-          <p>Being there matters more than having every answer. This is your space to practice showing up with care—without reading what wasn’t shared.</p>
-          <div class="actions"><a class="button primary" href="#kits">Start a conversation <span>↗</span></a><a class="button subtle" href="#bridge">How Parent Bridge works <span>→</span></a></div>
-          <div class="trustline"><span>◈ Consent first</span><span>◈ No teen journal access</span><span>◈ Your pace</span></div>
-        </div>
-        <div class="scrapbook" aria-label="Encouragement card illustration">
-          <div class="moon">☾</div>
-          <div class="tape tape-one" aria-hidden="true"></div>
-          <div class="letter">
-            <span class="letter-top">A little note to keep</span>
-            <p>“I’m here when<br>you’re ready.”</p>
-            <div class="little-stars">✧ ⋆ ✧</div>
-          </div>
-          <div class="tape tape-two" aria-hidden="true"></div>
-          <div class="polaroid"><div class="polaroid-art"><span>☁</span> ☽ <span>✦</span></div><p>quiet connection ♡</p></div>
-          <div class="scribble" aria-hidden="true">✳</div>
-        </div>
-      </section>
-      <section class="intro-grid" aria-label="Parent pathways">
-        <a class="glass-card" href="#kits"><span class="icon">💬</span><span class="card-title">Conversation kits</span><span class="card-desc">Easy openers for the moments words feel hard.</span><span class="arrow">↗</span></a>
-        <a class="glass-card" href="#reflection"><span class="icon">🕯️</span><span class="card-title">Your pause space</span><span class="card-desc">Write out your first response before you choose your next one.</span><span class="arrow">↗</span></a>
-        <a class="glass-card" href="#bridge"><span class="icon">🔒</span><span class="card-title">Parent Bridge</span><span class="card-desc">A boundary built around what teens choose to share.</span><span class="arrow">↗</span></a>
-      </section>
-      <section id="kits" class="section panel" aria-labelledby="kits-title">
-        <div><p class="section-kicker">01 / CONVERSATION KITS</p><h2 id="kits-title">Start small. Stay curious.</h2><p class="muted">Pick the kind of moment you’re facing. These prompts are general guidance—not information about a child.</p></div>
-        <div class="chips" role="group" aria-label="Choose a conversation moment">
-          <button type="button" class="chip active" data-topic="check-in" aria-pressed="true">Check-in</button>
-          <button type="button" class="chip" data-topic="hard-day" aria-pressed="false">Hard day</button>
-          <button type="button" class="chip" data-topic="boundaries" aria-pressed="false">Boundaries</button>
-          <button type="button" class="chip" data-topic="repair" aria-pressed="false">After a disagreement</button>
-        </div>
-        <div class="prompt-card"><span class="prompt-label">YOU COULD SAY</span><p id="prompt-text" aria-live="polite">“I’m glad to see you. Want company, help, or a little space?”</p><div class="prompt-actions"><button type="button" id="next-prompt" class="button small">Try another <span>↻</span></button><button type="button" id="copy-prompt" class="link-button">Copy phrase</button></div><p id="copy-status" class="fine" role="status"></p></div>
-      </section>
-      <section id="reflection" class="section two-col" aria-labelledby="reflection-title">
-        <div><p class="section-kicker">02 / PARENT REFLECTIONS</p><h2 id="reflection-title">The pause before<br>the reply.</h2><p class="muted">Give your first reaction a safe place to land. Nothing you type here is sent, saved, or shared by this website. Your draft disappears when you leave or reload.</p><div class="small-note">✦ This is your private, temporary writing space—not a record about your child.</div></div>
-        <div class="reflection-card"><label for="reflection-input">What do you want them to know?</label><textarea id="reflection-input" maxlength="1500" placeholder="I want you to know that I’m here to listen..." rows="6"></textarea><div class="editor-footer"><span id="reflection-count">0 / 1500</span><button type="button" id="clear-reflection" class="button small">Clear draft</button></div></div>
-      </section>
-      <section id="bridge" class="section panel bridge" aria-labelledby="bridge-title">
-        <div class="bridge-art" aria-hidden="true"><span>♡</span></div>
-        <div><p class="section-kicker">03 / SE’KRETS 2 TELL</p><h2 id="bridge-title">A bridge, never a back door.</h2><p>Parent Bridge is designed for moments a teen intentionally chooses to share with a verified guardian. It is <strong>not</strong> a way to read private pages, voice notes, messages, or moods.</p><div class="bridge-list"><div><b>Teen decides</b><span>Sharing must be explicit, specific, and revocable.</span></div><div><b>Guardian verifies</b><span>Identity, relationship, and permission must be checked by the server.</span></div><div><b>Private stays private</b><span>No private journaling or safety details are exposed by default.</span></div></div><div class="lock-note" role="status">🔒 Account linking and child-specific information are currently unavailable. No private child information is accessible on this site.</div></div>
-      </section>
-      <section id="support" class="section" aria-labelledby="support-title"><p class="section-kicker">04 / SUPPORT WITH CARE</p><h2 id="support-title">You don’t have to have the perfect words.</h2><div class="support-grid"><article><span>☁</span><h3>Listen first</h3><p>Open with curiosity. Reflect what you heard before offering advice.</p></article><article><span>🌙</span><h3>Respect a pause</h3><p>Let them know you’re available, then give space without punishment.</p></article><article><span>✧</span><h3>Find real support</h3><p>If someone is in immediate danger, contact local emergency services or a trusted professional rather than relying on an app.</p></article></div></section>
-    </main>
-    <footer><div class="footer-brand">Se’kret Bip <span>✦</span> Parents</div><p>Support without pressure. Connection without control.</p><p class="fine">A public parent-support experience. It does not access family accounts or any teen data. <a href="https://app.sekretbip.net" rel="noopener noreferrer">Visit Se’kret Bip ↗</a></p></footer>
-  </div>
-</body>
-</html>
+<a href="#welcome" class="skip">Skip to welcome</a>
+<div class="stars" aria-hidden="true"></div>
+<div class="shell">
+<header class="header"><a href="/" class="brand" aria-label="Se’kret Bip Parents home"><span class="mark">✦</span><span>SE’KRET <b>BIP</b><small>PARENT SIDE</small></span></a><span class="quiet">Your space starts here</span></header>
+<main id="welcome" class="entrance" aria-labelledby="welcome-heading">
+<div class="glow" aria-hidden="true"></div>
+<section class="intro">
+<p class="eyebrow">✧ WELCOME, PARENTS & GUARDIANS</p>
+<h1 id="welcome-heading">You’re here<br>for them.<br><em>There’s room for you, too.</em></h1>
+<p class="description">A quieter way to stay close, listen better, and keep growing together. Your teen’s private world stays theirs. Your Parent Side begins when you create an account.</p>
+<div class="actions">
+<a class="cta primary" href="https://app.sekretbip.net/signup?side=parent" rel="noopener noreferrer">Create Parent Account <span aria-hidden="true">↗</span></a>
+<a class="cta secondary" href="https://app.sekretbip.net/login?side=parent" rel="noopener noreferrer">I already have an account <span aria-hidden="true">→</span></a>
+</div>
+<p class="helper">Parent signup and sign-in open the existing Se’kret Bip account flow. Private parent features require verified access and your teen’s permission to share.</p>
+</section>
+<aside class="note" aria-label="A note for parents"><div class="tape" aria-hidden="true"></div><p class="note-kicker">a little note ♡</p><blockquote>“Being there doesn’t mean knowing everything.”</blockquote><span>— Se’kret Bip</span></aside>
+</main>
+<footer><p>SE’KRET BIP · PARENT SIDE</p><p>Connection without control.</p><p class="privacy">No family information is loaded on this public page.</p></footer>
+</div>
+</body></html>
