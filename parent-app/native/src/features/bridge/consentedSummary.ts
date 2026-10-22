@@ -1,5 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
-import { verifyCurrentGuardian } from '../auth/guardianEvidence';
+import { verifyCurrentGuardian } from '../auth/guardianEvidence.ts';
 
 // Read only exactly the teen-selected, generated parent-safe summary. Never fetch
 // raw journals, voice notes, companion messages, original sources or private posts.
