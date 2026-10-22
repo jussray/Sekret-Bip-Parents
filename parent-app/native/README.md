@@ -25,3 +25,7 @@ The five complex original parent features remain untouched under ../exported/scr
 ## Remaining release gates
 
 Guardian authentication and verified roles, teen-link invitations, item-specific recipient grants, RLS negative tests, unlink/revocation, safety review for Parent Circle, accessible device/browser journeys, and exact production release verification. No secrets or production family data belong in this repository or its preview. Do not deploy this preview over the existing live Parent Portal.
+
+## Guardian login gate (native preview)
+
+Native app tabs no longer mount for visitors. Signup and sign-in use the existing Se’kret Bip Supabase Auth backend when the publishable URL and key are configured; this is separate from the welcome-only public parent domain. A signed-in guardian must pass current server-owned profile verification, VERIFIED_GUARDIAN state and guardian RPC. New accounts cannot self-approve. Sessions are memory-only; sign-out removes tab access immediately. Bridge and Circle remain locked pending item-specific consent checks. See docs/PARENT_AUTH_GATE.md at the repository root.
