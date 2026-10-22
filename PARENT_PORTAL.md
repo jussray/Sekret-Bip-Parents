@@ -4,9 +4,9 @@
 
 ## Current deliverable
 
-The new standalone web entry point is `public/index.html`. It is a responsive, accessible, parent-specific site with conversation kits and a **memory-only reflection editor**. Build with `npm ci && npm run check`, serve the `dist/` output using Cloudflare Pages. No external scripts, trackers, accounts, or calls are used in the public version.
+The new standalone web entry point is `public/index.html`. It is now a **front-door-only** public page with Create Parent Account and Sign In links. Conversation kits, reflection editor, Room, Bridge and Circle are preserved as code but unavailable to unauthenticated visitors. Build with `npm ci && npm run check`, serve the `dist/` output using Cloudflare Pages. No external scripts, trackers, accounts, or calls are used in the public version.
 
-**Critical limitations:** The public parent site does not authenticate guardians, connect family accounts, show child details, send messages, collect contact details, or display support alerts. These are **not** represented as working; Parent Bridge states that child-linked data is unavailable. This is intentional until the backend uses verified guardian identity, child-controlled grants, and server-side authorization with real negative tests.
+**Critical limitations:** The public parent site does not authenticate guardians, connect family accounts, show child details, send messages, collect contact details, or display support alerts. These are **not** represented as working; no Parent Bridge application screen loads on the public landing page. This is intentional until the backend uses verified guardian identity, child-controlled grants, and server-side authorization with real negative tests.
 
 ## Relationship between repositories
 

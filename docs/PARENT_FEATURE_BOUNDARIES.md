@@ -1,3 +1,7 @@
+## Active public-entry correction (2026-10-22)
+
+The product owner requires both parent hostnames to serve a **welcome-only** Parent Front Door until authenticated access. Prior notes below describe an earlier public portal implementation and are historical: active `public/index.html` now shows just signup/sign-in links; `public/app.js` is inert; `scripts/build.mjs` allowlists only front-door assets; `public/features/` source remains preserved but **never packaged**. See `docs/PARENT_FRONT_DOOR.md`.
+
 # Parent feature extraction boundary — 2026-10-22
 
 ## Ownership and preservation

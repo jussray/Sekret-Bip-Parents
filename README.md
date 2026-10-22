@@ -9,14 +9,14 @@ This is the dedicated parent repository for **Se’kret Bip** (also called **Bip
 **Cloudflare Pages project:** `sekret-bip-parents`
 
 > [!IMPORTANT]
-> The live public portal, modular portal candidate, and independent Expo preview are **distinct implementations**. The live public portal offers conversation guides and temporary reflections, **not** guardian login or family-data access. The independent Expo preview is still under review. Parent Bridge and Parent Circle remain locked until guardian identity, teen-controlled sharing, server-side authorization, and revocation are tested.
+> The live public portal, modular portal candidate, and independent Expo preview are **distinct implementations**. The public portal is now **welcome-only before signup**. It shows Create Parent Account and Sign In. All app features remain preserved but are not served publicly; independent parent authentication is still being verified. The independent Expo preview is still under review. Parent Bridge and Parent Circle remain locked until guardian identity, teen-controlled sharing, server-side authorization, and revocation are tested.
 
 ## Current features
 
 | Surface | What works | What is not yet enabled |
 | --- | --- | --- |
-| Live public portal | Conversation kits, unsaved reflection editor, scrapbook-night styling, Parent Bridge explanation | Guardian accounts, private family data, Bridge messages |
-| Modular web candidate | Same public screens with extracted Conversation Kits and Parent Reflections modules | Unverified production cutover |
+| Live public portal | Parent Front Door, Create Parent Account and Sign In | App screens, guardian identity and private family data |
+| Preserved modular web features | Conversation Kits and Parent Reflections remain in repository source | Excluded from public Pages build until authenticated integration |
 | Independent Expo parent preview | Parent Room mood check-in, unsaved Parent Pages, Coach prompts and tabs | Authenticated Bridge, linked teen content, live Circle |
 | Preserved full parent designs | Original Room, Pages, Bridge, Circle, Approvals and additional parent-specific screens | Not a self-contained runnable app |
 
@@ -49,7 +49,7 @@ npm run guard:source
 npm run check
 ```
 
-The web build copies `public/` into `dist/`. The modular portal keeps screen markup in `public/index.html`, and reusable interaction logic in `public/features/`. Reflective writing remains temporary and is not sent to a server.
+The public Pages build allowlists only front-door HTML, CSS, inert JS, 404 and security headers. All modules in `public/features/` remain preserved in Git, but are **not packaged for public access**. See [Parent Front Door policy](docs/PARENT_FRONT_DOOR.md).
 
 ### Independent parent Expo preview
 
