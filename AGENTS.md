@@ -19,3 +19,7 @@ Preserve existing work. Do not delete, deploy, publish, merge, expose data, chan
 Repository role: An explicitly non-canonical legacy Se'kret Bip snapshot whose default operating mode is read-only preservation.
 
 Apply the skill's non-negotiable boundaries, verification rules, and truthful output format.
+
+## Sauce Guard (source preservation)
+
+Run `npm run guard:source` before and after edits. `guard/source-lock.json` pins source snapshots; never auto-regenerate its hashes, delete archived parent screens, or move teen data into public features. Modify only active public/native feature code or reviewed adapters; consult `docs/SAUCE_GUARD.md` and the updated `README.md`. Guard failures are blockers for review, not permissions to overwrite files.
