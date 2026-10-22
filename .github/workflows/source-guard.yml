@@ -1,0 +1,20 @@
+name: Sauce Guard source-preservation checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preserve-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit source integrity and frozen feature snapshots
+        run: node scripts/source-guard.mjs
+      - name: Run negative source-tamper tests
+        run: node --test tests/source-guard.test.mjs
