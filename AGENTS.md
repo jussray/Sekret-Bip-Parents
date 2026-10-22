@@ -1,3 +1,13 @@
+# Active repo role — Se’kret Bip Parents (founder decision 2026-10-22)
+
+This repository is now the **canonical parent-side Se’kret Bip product repository**. This explicit owner decision supersedes the legacy `do-not-use` designation below. Keep all older files and their history intact; use `public/` as the independently deployed parent site. `jussray/Sekret-Bip` remains the separate canonical teen product. Read `PARENT_PORTAL.md` before implementation.
+
+Guardrails: no client-side-only guardian role gates; no family data without verified identity, consent, RLS, and revocation; do not access private teen journaling; preserve all legacy code. New work must be reviewable and tested. Do not merge or deploy unverified child-data features or silently alter other hostnames. The original instructions follow as historical provenance and are **not** an active instruction to treat this owner-approved parent repository as abandoned.
+
+---
+
+## Superseded historic instructions (preserved verbatim)
+
 # Agent Instructions for Do-not-use legacy archive
 
 Before nontrivial work, read `.agents/skills/do-not-use-archive/SKILL.md` and use its 5W1H operating contract as active reasoning.
