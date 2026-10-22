@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Linking, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getParentClient } from './client';
@@ -69,6 +69,13 @@ export function ParentEntry({ screen, onSelect, onRefresh, onSignOut }: Props) {
             <>
               <Text style={styles.title}>Your Parent Side stays protected.</Text>
               <Text style={styles.description}>Your account is signed in, but verified guardian access is not complete. Finish your parent setup and guardian review in Se’kret Bip. No app features or teen data are available here yet.</Text>
+              <Pressable accessibilityRole="link" onPress={() => {
+                void Linking.openURL('https://app.sekretbip.net/parent-setup').catch(() => {
+                  setMessage('Unable to open setup. Visit app.sekretbip.net/parent-setup manually.');
+                });
+              }} style={styles.action}><Text style={styles.actionText}>Complete Parent Setup ↗</Text></Pressable>
+              <Text style={styles.description}>After completing setup and verification, return here to check your access. You may need to sign in again.</Text>
+              <Text accessibilityLiveRegion="polite" style={styles.status}>{message}</Text>
               <Pressable accessibilityRole="button" onPress={() => { void onRefresh(); }} style={styles.action}><Text style={styles.actionText}>Check verification again ↻</Text></Pressable>
               <Pressable accessibilityRole="button" onPress={() => { void onSignOut(); }} style={styles.secondary}><Text style={styles.secondaryText}>Sign out</Text></Pressable>
             </>

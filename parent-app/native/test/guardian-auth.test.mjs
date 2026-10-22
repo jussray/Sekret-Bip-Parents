@@ -108,3 +108,11 @@ test('separate public Cloudflare build stays welcome-only', () => {
   const html = read('../../public/index.html');
   assert.doesNotMatch(html, /<script\b|data-topic=|reflection-input/);
 });
+
+test('verification review has an explicit setup handoff, never a local approval override', () => {
+  const source = read('src/features/auth/ParentEntry.tsx');
+  assert.match(source, /Complete Parent Setup/);
+  assert.match(source, /https:\/\/app\.sekretbip\.net\/parent-setup/);
+  assert.match(source, /onRefresh/);
+  assert.doesNotMatch(source, /setDecision\(\{\s*kind:\s*['"]guardian['"]/);
+});

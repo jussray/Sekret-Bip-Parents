@@ -31,3 +31,7 @@ No production database changes, deployment, DNS changes, merge, or real-family d
 ## Invalidation on background/resume
 
 AppState background/inactive events immediately hide the entire parent navigation and invalidate outstanding checks. On foreground, revalidate identity, parent profile, server-owned verification state, and guardian RPC before any tabs can return. This is in addition to sign-out invalidation; no persisted guardian access token or cached entitlement is granted.
+
+## Incomplete guardian setup
+
+The native app's review screen offers a link to the existing Se’kret Bip Parent Setup route (`https://app.sekretbip.net/parent-setup`). It does not grant a role, create a guardian link, or insert verification records. Returning to the native app rechecks all server-owned guardian requirements, and a fresh sign-in may be needed. Route response was observed HTTP 200, but end-to-end onboarding is not yet proven with a controlled test guardian account.
