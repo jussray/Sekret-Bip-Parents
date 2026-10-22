@@ -38,3 +38,8 @@ jobs:
           test -s dist/_headers
           test -s dist/app.js
           test -s dist/styles.css
+          test ! -e dist/features
+          test ! -e dist/parent-app
+          test ! -e dist/upstream-parent
+          grep -q 'Parent Front Door' dist/index.html
+          ! grep -q 'Conversation kits' dist/index.html
