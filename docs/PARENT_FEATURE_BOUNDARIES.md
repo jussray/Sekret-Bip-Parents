@@ -23,3 +23,9 @@ The archived Expo parent screens are **not independent working features**. Their
 ## Release gate
 
 This review branch is not production. Do not point Cloudflare's production branch at it until GitHub Actions passes on the exact head, source-scope review is complete, and HTTPS/browser behavior is checked. Roll back by retaining `feat/parent-portal-live-domain-20261022` as the production source and the archived original portal files.
+
+## Native-screen adapter extraction
+
+A separate additive source-only pass copied five pinned original parent-screen implementations verbatim into `parent-app/src/features/{room,bridge,pages,circle,approvals}/` and created matching **thin** adapters in `parent-app/src/screens/`. The original `parent-app/exported/screens` and `upstream-parent/screens` remain intact. The names are preserved and a Node test compares the feature copies byte-for-byte with immutable source blob IDs.
+
+**This is a preservation-oriented structural extraction, not a completed, compiling React Native application.** Every feature still has unresolved upstream asset/`@/` service dependencies; account and consent authorization remain blocked until proven independently. The public Cloudflare portal never bundles these parent-native files.

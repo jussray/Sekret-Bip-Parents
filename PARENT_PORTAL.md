@@ -35,3 +35,7 @@ The existing `app.js`, `screens`, `components`, `README.md`, and older `.agents/
 A green static build is necessary but not sufficient. Before child-linked features: auth provider wiring; guardian/teen link workflow; concrete table schema and RLS tests (unauthorized, wrong parent, expired/revoked, IDOR); consent UI; privacy/security review; deployed integration tests; and incident/rollback checks.
 
 See `docs/PARENT_DOMAIN.md` for Cloudflare setup and rollback.
+
+## Feature/screen extraction review branch (2026-10-22)
+
+The working review branch `feat/parent-modular-features-20261022` preserves current production portal screens under `preserved/live-portal-20261022/`, extracts static feature logic to `public/features/`, and copies five pinned parent-native screen implementations into `parent-app/src/features/` behind thin `parent-app/src/screens/` adapters. `parent-app/exported/` retains the original pinned source. See `docs/PARENT_FEATURE_BOUNDARIES.md`. This branch is **review-only**, not the current Cloudflare Pages production source. Do not switch Pages production branch or import child-linked data until separately authorized and tested.
