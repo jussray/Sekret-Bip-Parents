@@ -1,0 +1,7 @@
+# Consent-bound Bridge reader (source-only, not activated)
+
+The app now has a read-only function in parent-app/native/src/features/bridge/consentedSummary.ts. It accepts one exact request ID and returns only the pre-generated safe themes, conversation starters and limitations, after checking server-verified guardian status, active linked parent, named recipient, ready/viewed share, no revocation and no expiry. It rechecks authorization after loading to reduce in-flight revocation exposure. It refuses invalid IDs and any query error without revealing whether a teen or share exists.
+
+The currently deployed parent websites stay welcome-only. Native BridgeView still renders PrivateGate (locked); this reader has **not** been wired into UI because staging RLS and real separate test identities are not proven. Source notes, private teen data and response payloads are never logged or sent to analytics.
+
+**Do not call this complete access control.** Concurrent revocation and data already delivered cannot be solved by client checks: Postgres RLS must authorize every read, with no browser service-role key, and invalidation/cache handling is required before activation. Real staging tests for wrong parent, wrong child, replayed IDs, link removal, expiry, revoked grants, stolen sessions and logout are release blockers. The legacy bridge_signals SELECT policy remains a separate proposed fix, not applied.
