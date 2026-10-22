@@ -5,8 +5,8 @@
 This is the dedicated parent repository for **Se’kret Bip** (also called **Bip**). The teen-side app remains [jussray/Sekret-Bip](https://github.com/jussray/Sekret-Bip).
 
 **Live public portal:** https://parent.sekretbip.net  
-**Review branch:** \`feat/parent-modular-features-20261022\` ([PR #6](https://github.com/jussray/Sekret-Bip-Parents/pull/6))  
-**Cloudflare Pages project:** \`sekret-bip-parents\`
+**Review branch:** `feat/parent-modular-features-20261022` ([PR #6](https://github.com/jussray/Sekret-Bip-Parents/pull/6))  
+**Cloudflare Pages project:** `sekret-bip-parents`
 
 > [!IMPORTANT]
 > The live public portal, modular portal candidate, and independent Expo preview are **distinct implementations**. The live public portal offers conversation guides and temporary reflections, **not** guardian login or family-data access. The independent Expo preview is still under review. Parent Bridge and Parent Circle remain locked until guardian identity, teen-controlled sharing, server-side authorization, and revocation are tested.
@@ -24,18 +24,18 @@ This is the dedicated parent repository for **Se’kret Bip** (also called **Bip
 
 | Location | Responsibility |
 | --- | --- |
-| \`public/\` | Public Pages site: screen layout, styles, reusable browser feature modules |
-| \`parent-app/native/\` | Separate Expo SDK 56 / React Native / Expo Router parent preview |
-| \`parent-app/src/features/\` | Preserved original Room, Bridge, Pages, Circle and Approvals feature source (**locked**) |
-| \`parent-app/src/screens/\` | Thin re-export adapters for preserved native features |
-| \`parent-app/exported/\` | 46 pinned byte-identical parent exports from the teen app (**locked**) |
-| \`upstream-parent/\` | Broader source-only parent export (**locked**) |
-| \`preserved/\` | Exact earlier web portal versions (**locked**) |
-| \`legacy/\`, \`app.js\`, \`screens\`, \`components/\` | Original mixed teen/parent prototype and historical README (**locked**) |
-| \`guard/\`, \`scripts/source-guard.mjs\` | Sauce Guard integrity manifest and verifier |
-| \`docs/\` | Privacy, release, feature-boundary, architecture and source-protection contracts |
+| `public/` | Public Pages site: screen layout, styles, reusable browser feature modules |
+| `parent-app/native/` | Separate Expo SDK 56 / React Native / Expo Router parent preview |
+| `parent-app/src/features/` | Preserved original Room, Bridge, Pages, Circle and Approvals feature source (**locked**) |
+| `parent-app/src/screens/` | Thin re-export adapters for preserved native features |
+| `parent-app/exported/` | 46 pinned byte-identical parent exports from the teen app (**locked**) |
+| `upstream-parent/` | Broader source-only parent export (**locked**) |
+| `preserved/` | Exact earlier web portal versions (**locked**) |
+| `legacy/`, `app.js`, `screens`, `components/` | Original mixed teen/parent prototype and historical README (**locked**) |
+| `guard/`, `scripts/source-guard.mjs` | Sauce Guard integrity manifest and verifier |
+| `docs/` | Privacy, release, feature-boundary, architecture and source-protection contracts |
 
-The old README's long React Native source excerpt is preserved in \`legacy/README.pre-parent-export.md\` and \`legacy/README.pre-parent-repurpose.md\`. Rewriting this entry point did not erase that original content.
+The old README's long React Native source excerpt is preserved in `legacy/README.pre-parent-export.md` and `legacy/README.pre-parent-repurpose.md`. Rewriting this entry point did not erase that original content.
 
 ## Quick start
 
@@ -43,34 +43,34 @@ Requires **Node.js 22+** for the independent preview workflows.
 
 ### Public web portal
 
-\`\`\`bash
+```bash
 npm ci --ignore-scripts
 npm run guard:source
 npm run check
-\`\`\`
+```
 
-The web build copies \`public/\` into \`dist/\`. The modular portal keeps screen markup in \`public/index.html\`, and reusable interaction logic in \`public/features/\`. Reflective writing remains temporary and is not sent to a server.
+The web build copies `public/` into `dist/`. The modular portal keeps screen markup in `public/index.html`, and reusable interaction logic in `public/features/`. Reflective writing remains temporary and is not sent to a server.
 
 ### Independent parent Expo preview
 
-\`\`\`bash
+```bash
 cd parent-app/native
 npm install --no-audit --no-fund
 npm test
 npm run typecheck
 npm run build:web
 npm start
-\`\`\`
+```
 
-Its five app routes are thin adapters, while the new feature implementations live under \`parent-app/native/src/features/\`. It deliberately does **not** import legacy teen services, real family records, or the archived full parent screens.
+Its five app routes are thin adapters, while the new feature implementations live under `parent-app/native/src/features/`. It deliberately does **not** import legacy teen services, real family records, or the archived full parent screens.
 
 ## 🛡️ Sauce Guard — preserve the source
 
-**Sauce Guard** protects **133 original Git blobs** with \`guard/source-lock.json\`, including the original app files, pinned export, Room/Bridge/Pages/Circle/Approvals copies, archived READMEs, and prior portal versions.
+**Sauce Guard** protects **133 original Git blobs** with `guard/source-lock.json`, including the original app files, pinned export, Room/Bridge/Pages/Circle/Approvals copies, archived READMEs, and prior portal versions.
 
-\`\`\`bash
+```bash
 npm run guard:source
-\`\`\`
+```
 
 The verifier fails on missing or edited protected files, unexpected additions inside locked directories, a mismatched pinned 46-file export, or parent feature copies that differ from their originals. Independent GitHub Actions checks run for every pull request. **Do not regenerate the lock manifest during routine builds or auto-fix a failed guard.** Any legitimate source migration needs exact provenance, a protected copy, review, and tests.
 
@@ -89,10 +89,10 @@ The Parent Side companion is for reflection and relationship repair, not surveil
 | Responsibility | Authority |
 | --- | --- |
 | Parent website | https://parent.sekretbip.net |
-| Cloudflare Pages project | \`sekret-bip-parents\` |
-| Last confirmed public production branch | \`feat/parent-portal-live-domain-20261022\` |
-| Current feature-development branch | \`feat/parent-modular-features-20261022\` |
-| Parent source export baseline | \`jussray/Sekret-Bip\` commit \`015ac2d39bf5230530996880ea3cfa4f4707077b\` |
+| Cloudflare Pages project | `sekret-bip-parents` |
+| Last confirmed public production branch | `feat/parent-portal-live-domain-20261022` |
+| Current feature-development branch | `feat/parent-modular-features-20261022` |
+| Parent source export baseline | `jussray/Sekret-Bip` commit `015ac2d39bf5230530996880ea3cfa4f4707077b` |
 | Teen-side API and runtime | Owned by the separate Se’kret Bip repository and Cloudflare services |
 
 Cloudflare's custom domain, TLS and page rendering were verified during setup, but fresh provider readback is required before claiming any future deployment. A green GitHub check is not proof of production release. **No automated merge, DNS change or deployment is authorized by this README.**
