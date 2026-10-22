@@ -1,3 +1,13 @@
+# Se’kret Bip Parents — dedicated parent-side app
+
+**Repository role (October 22, 2026):** Canonical parent application for Se’kret Bip. The new standalone site is located in `public/` and is intended for **https://parent.sekretbip.net**. Review [PARENT_PORTAL.md](PARENT_PORTAL.md) for product boundaries and [docs/PARENT_DOMAIN.md](docs/PARENT_DOMAIN.md) for release verification.
+
+Run `npm ci && npm run check` to verify the new site. This first version provides parent conversation guides and an in-memory reflection editor; guardian login and child-linked information remain deliberately unavailable until real identity, authorization, and consent controls are verified.
+
+**Historical prototype preservation:** The original content of this README (including its React Native source excerpt) remains below, unmodified. It is not the active parent web app or a production data contract.
+
+---
+
 # Se-kret-Bip
 import React, { useState, useEffect, useRef } from 'react'; 
 import BottomNav from './components/BottomNav';
