@@ -1,0 +1,10 @@
+{
+  "name": "sekret-bip-parents-export-integrity",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Audit only — not a runnable app",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/verify-export.mjs"
+  }
+}
