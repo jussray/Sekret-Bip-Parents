@@ -1,0 +1,557 @@
+{
+  "version": 1,
+  "policy": "SAUCE_GUARD_source_preservation",
+  "reference": {
+    "repo": "jussray/Sekret-Bip-Parents",
+    "commit": "72e6c31e48a38929776cf3bc19108aebbcc303c3",
+    "tree": "142efe4c117671e93470c7cac6bca566ab482d0f",
+    "upstream": "jussray/Sekret-Bip",
+    "upstream_commit": "015ac2d39bf5230530996880ea3cfa4f4707077b"
+  },
+  "immutableFolders": [
+    "legacy",
+    "preserved",
+    "upstream-parent",
+    "parent-app/exported",
+    "parent-app/src/features/room",
+    "parent-app/src/features/bridge",
+    "parent-app/src/features/pages",
+    "parent-app/src/features/circle",
+    "parent-app/src/features/approvals",
+    "components"
+  ],
+  "lockedFiles": [
+    {
+      "path": "app.js",
+      "sha": "c6cfc84b07745911a2366fd8718a50993310e6cc"
+    },
+    {
+      "path": "components/BottomNav.js",
+      "sha": "3adcc4e7bf919a6cd70fe39d85b20b03952f947f"
+    },
+    {
+      "path": "legacy/AGENTS.pre-parent-export.md",
+      "sha": "0762c464b14bc6f1cdae6e1971c330bd89c082bf"
+    },
+    {
+      "path": "legacy/AGENTS.pre-parent-repurpose.md",
+      "sha": "0762c464b14bc6f1cdae6e1971c330bd89c082bf"
+    },
+    {
+      "path": "legacy/README.pre-parent-export.md",
+      "sha": "c12ffd2cb273afe0dd7f2ae5691e8dac65c75c03"
+    },
+    {
+      "path": "legacy/README.pre-parent-repurpose.md",
+      "sha": "c12ffd2cb273afe0dd7f2ae5691e8dac65c75c03"
+    },
+    {
+      "path": "parent-app/EXPORT_MANIFEST.json",
+      "sha": "6d1265b796f8b0356b29a30e3c51fbb0373cd989"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/_layout.tsx",
+      "sha": "a336c77a6fd5b435111d082bfda314114fd450c2"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/approvals.tsx",
+      "sha": "22c215e028de91f240741c323e4a646773013848"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/bip-jr-study.tsx",
+      "sha": "5af5522fc889e726222f67527756e6077db47af8"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/bip-jr.tsx",
+      "sha": "b2055e6ea61c2a9ac6a284808380c765b9e85201"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/bridge.tsx",
+      "sha": "081200f270e09a0563ade0797c7ebd881bfc76fb"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/calm.tsx",
+      "sha": "ef0af4f52e881cb7c5d3ed0fb2a94a6fd6ebe9a3"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/circle/[id].tsx",
+      "sha": "61e2253c1f66c6cfe8a39e4f78d82c7113d07446"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/circle/feed.tsx",
+      "sha": "0cc8755894b064838adc955122ab9a8c8b2d74a4"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/circle/index.tsx",
+      "sha": "1a4557486fc2807b2cbc2a72978426706873a294"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/circle/weather.tsx",
+      "sha": "9d736177f1483b2bef07c411f3b94f49726cce8b"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/dashboard.tsx",
+      "sha": "25613d57016ec74e27eb29b385a17ee6820ba7b4"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/growth.tsx",
+      "sha": "4cb1c7f98168e17983f4a614c6c58bfdcc7e4634"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/more.tsx",
+      "sha": "cfd6c848952d61a826dea5b624366fb85b599153"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/pages.tsx",
+      "sha": "f846b82c7f3eef62c1d4c8c8d3d91ffcfe9c0e04"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/period-calendar.tsx",
+      "sha": "66e0ad0780312addc634c84daacc68cd4b153f65"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/profile.tsx",
+      "sha": "e66fe32240b0d45211f5a01efaaa050d18fd9263"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/repair.tsx",
+      "sha": "6c032c35f3206ecf96c473ea77e85693bd1981b6"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/resources.tsx",
+      "sha": "85939ad73ffb7c6286736a3c720b11fda83dcab7"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/room.tsx",
+      "sha": "df0621da059918c1e3337fa58df15bd4af1e601b"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/s2tell.tsx",
+      "sha": "c9e571d879bd933dd50a2f43f3c037e373cafafa"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/sekret.tsx",
+      "sha": "3f9bed3202068141ae476cc3c937e7d746e5ead3"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/settings.tsx",
+      "sha": "184bb12f7ba9b98d77434824819058617f2cf12c"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/teen-verification.tsx",
+      "sha": "454b1d310126bf41f763461734c0cf39bdd4becc"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/voicebip.tsx",
+      "sha": "84d52606d96b25566e1e59673a9d1c19e93d2270"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/voicereflect.tsx",
+      "sha": "7604537a45cffb8389e16cf1a3d692627cd0c444"
+    },
+    {
+      "path": "parent-app/exported/screens/ParentApprovalsScreen.tsx",
+      "sha": "d960c5a7689cac7618762090382b0d8e2b75d5ba"
+    },
+    {
+      "path": "parent-app/exported/screens/ParentBridgeScreen.tsx",
+      "sha": "c03d4c119346dacc64067583a5a60589f7e4f435"
+    },
+    {
+      "path": "parent-app/exported/screens/ParentCircleScreen.tsx",
+      "sha": "89a57067a8581d67f2cd38377d85fd2b1159b5a3"
+    },
+    {
+      "path": "parent-app/exported/screens/ParentPagesScreen.tsx",
+      "sha": "58317afff1287bf19a13272c529ed1f82a2eb9a8"
+    },
+    {
+      "path": "parent-app/exported/screens/ParentRoomScreen.tsx",
+      "sha": "c676e5baa3c3b38ccf166bfa9940e614ae7bded6"
+    },
+    {
+      "path": "parent-app/exported/src/bridge/types.ts",
+      "sha": "fdc7908f8d8f8db166e16a40c3ba813367054245"
+    },
+    {
+      "path": "parent-app/exported/src/parent/assets.ts",
+      "sha": "7fda4f9ba9031f4ac6fb1cd92306e745600dcde5"
+    },
+    {
+      "path": "parent-app/exported/src/parent/components/index.ts",
+      "sha": "1e649aa0474681b6b1c7596f50a2fd5bbb8b734b"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/calm/ParentCalmScreen.tsx",
+      "sha": "353060b2a38b5e32ba89fe1a8d4d7ba8f2d2446c"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/period-calendar/ParentPeriodCalendarScreen.tsx",
+      "sha": "9d9c35b63cef1520bce6dc38b9e4d14e8b923803"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/repair/ParentRepairScreen.tsx",
+      "sha": "f53bd90281d9ed2a9fe62256139c80cac99308fe"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/s2tell/ParentS2TellInboxScreen.tsx",
+      "sha": "1a07d0d532ce3fc36f45b2d2918f272ba41f0247"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/sekret/ParentSekretCoachScreen.tsx",
+      "sha": "bbc876e187f3f312854d860e17e64a19c8cd1d4d"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/voice/ParentVoiceReflectionScreen.tsx",
+      "sha": "fbfdc743c7fbe2cb421d5570937fa9ba934253f4"
+    },
+    {
+      "path": "parent-app/exported/src/parent/hooks/index.ts",
+      "sha": "ae6131c492c9172c74b609004b2091b73e8e12dc"
+    },
+    {
+      "path": "parent-app/exported/src/parent/index.ts",
+      "sha": "a3820983e25cc4558f085b9dbe39f2487de1b529"
+    },
+    {
+      "path": "parent-app/exported/src/parent/navigation/index.ts",
+      "sha": "7ddde9cc8e06b6e2c1ef79b83eccc084caf96fbe"
+    },
+    {
+      "path": "parent-app/exported/src/parent/routes.ts",
+      "sha": "66ed1bfa67f1c6daf0b60f2d0f3adc772c1309b0"
+    },
+    {
+      "path": "parent-app/exported/src/parent/screens/index.ts",
+      "sha": "e9d758bae308e44c27cc45abc45b8dbdc0154e78"
+    },
+    {
+      "path": "parent-app/exported/src/parent/services/index.ts",
+      "sha": "64b75e3873b2d321703f351fe38c6153c3d00d1b"
+    },
+    {
+      "path": "parent-app/exported/src/services/parentEntryState.ts",
+      "sha": "133817015a051213e54ed704a334226761886b62"
+    },
+    {
+      "path": "parent-app/src/features/approvals/ParentApprovalsFeature.tsx",
+      "sha": "d960c5a7689cac7618762090382b0d8e2b75d5ba"
+    },
+    {
+      "path": "parent-app/src/features/bridge/ParentBridgeFeature.tsx",
+      "sha": "c03d4c119346dacc64067583a5a60589f7e4f435"
+    },
+    {
+      "path": "parent-app/src/features/circle/ParentCircleFeature.tsx",
+      "sha": "89a57067a8581d67f2cd38377d85fd2b1159b5a3"
+    },
+    {
+      "path": "parent-app/src/features/pages/ParentPagesFeature.tsx",
+      "sha": "58317afff1287bf19a13272c529ed1f82a2eb9a8"
+    },
+    {
+      "path": "parent-app/src/features/room/ParentRoomFeature.tsx",
+      "sha": "c676e5baa3c3b38ccf166bfa9940e614ae7bded6"
+    },
+    {
+      "path": "preserved/alternate-parent-entry/_headers",
+      "sha": "68193f3d9cb94bb296974059c789e485487b068f"
+    },
+    {
+      "path": "preserved/alternate-parent-entry/app.js",
+      "sha": "6c4c343dce00a40a608bf6e20852e5c430367bf6"
+    },
+    {
+      "path": "preserved/alternate-parent-entry/index.html",
+      "sha": "4f4020c1dadea26315b7fb32d6392752463b83ed"
+    },
+    {
+      "path": "preserved/alternate-parent-entry/robots.txt",
+      "sha": "1f53798bb4fe33c86020be7f10c44f29486fd190"
+    },
+    {
+      "path": "preserved/alternate-parent-entry/styles.css",
+      "sha": "6f628849dc34b886ad0107685f1d9d4443b61dd9"
+    },
+    {
+      "path": "preserved/live-portal-20261022/app.js",
+      "sha": "e0eadc3edfbf0fdb983b9097a4cabda24b94623d"
+    },
+    {
+      "path": "preserved/live-portal-20261022/index.html",
+      "sha": "7312cef530e2ede7425f95860fd97d1379b87199"
+    },
+    {
+      "path": "screens",
+      "sha": "b825d86701cfc0f19d18609825637a8ab33bf026"
+    },
+    {
+      "path": "upstream-parent/app/(auth)/guardian-verification.tsx",
+      "sha": "d5e943babb9ff938254f1f88efbb5604a2d256d4"
+    },
+    {
+      "path": "upstream-parent/app/(auth)/parent-link-verify.tsx",
+      "sha": "76aa64b7cb99f501e79a3930e177e36f4fcc3f41"
+    },
+    {
+      "path": "upstream-parent/app/(onboarding)/parent-link.tsx",
+      "sha": "e16b5f7057c52e3eaad8e3d4e2d24c59130f7814"
+    },
+    {
+      "path": "upstream-parent/app/(onboarding)/parent-setup.tsx",
+      "sha": "e9bea291f483d6923da52f4bdf01f5c5ce8b17bc"
+    },
+    {
+      "path": "upstream-parent/app/(onboarding)/parent-splash.tsx",
+      "sha": "b23c5a5776176f01aa3053872cbb7d801d0298a1"
+    },
+    {
+      "path": "upstream-parent/app/(onboarding)/parent-welcome.tsx",
+      "sha": "28a0b98dc5f231790a962b168649cb1ce3aa55d5"
+    },
+    {
+      "path": "upstream-parent/app/(onboarding)/parental-consent.tsx",
+      "sha": "eb0646aa6eb4d77603ec0fff4115f66d58518ff1"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/_layout.tsx",
+      "sha": "a336c77a6fd5b435111d082bfda314114fd450c2"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/approvals.tsx",
+      "sha": "22c215e028de91f240741c323e4a646773013848"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/bip-jr-study.tsx",
+      "sha": "5af5522fc889e726222f67527756e6077db47af8"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/bip-jr.tsx",
+      "sha": "b2055e6ea61c2a9ac6a284808380c765b9e85201"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/calm.tsx",
+      "sha": "ef0af4f52e881cb7c5d3ed0fb2a94a6fd6ebe9a3"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/circle/[id].tsx",
+      "sha": "61e2253c1f66c6cfe8a39e4f78d82c7113d07446"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/circle/feed.tsx",
+      "sha": "0cc8755894b064838adc955122ab9a8c8b2d74a4"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/circle/weather.tsx",
+      "sha": "9d736177f1483b2bef07c411f3b94f49726cce8b"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/dashboard.tsx",
+      "sha": "25613d57016ec74e27eb29b385a17ee6820ba7b4"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/growth.tsx",
+      "sha": "4cb1c7f98168e17983f4a614c6c58bfdcc7e4634"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/more.tsx",
+      "sha": "cfd6c848952d61a826dea5b624366fb85b599153"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/pages.tsx",
+      "sha": "f846b82c7f3eef62c1d4c8c8d3d91ffcfe9c0e04"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/period-calendar.tsx",
+      "sha": "66e0ad0780312addc634c84daacc68cd4b153f65"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/profile.tsx",
+      "sha": "e66fe32240b0d45211f5a01efaaa050d18fd9263"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/repair.tsx",
+      "sha": "6c032c35f3206ecf96c473ea77e85693bd1981b6"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/resources.tsx",
+      "sha": "85939ad73ffb7c6286736a3c720b11fda83dcab7"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/room.tsx",
+      "sha": "df0621da059918c1e3337fa58df15bd4af1e601b"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/s2tell.tsx",
+      "sha": "c9e571d879bd933dd50a2f43f3c037e373cafafa"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/sekret.tsx",
+      "sha": "3f9bed3202068141ae476cc3c937e7d746e5ead3"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/settings.tsx",
+      "sha": "184bb12f7ba9b98d77434824819058617f2cf12c"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/teen-verification.tsx",
+      "sha": "454b1d310126bf41f763461734c0cf39bdd4becc"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/voicebip.tsx",
+      "sha": "84d52606d96b25566e1e59673a9d1c19e93d2270"
+    },
+    {
+      "path": "upstream-parent/app/(parent)/voicereflect.tsx",
+      "sha": "7604537a45cffb8389e16cf1a3d692627cd0c444"
+    },
+    {
+      "path": "upstream-parent/constants/parentAccount.ts",
+      "sha": "860cfc908ff4f5e9e5e4855b95d302e0492eacbc"
+    },
+    {
+      "path": "upstream-parent/constants/parentSekret.ts",
+      "sha": "c0a5deee955efb8e49caf63614206df57d7711c5"
+    },
+    {
+      "path": "upstream-parent/docs/BRIDGE_CONNECTION_AUDIT.md",
+      "sha": "2a76d640ebda34f2681019b8d43f48c08751091f"
+    },
+    {
+      "path": "upstream-parent/docs/PARENT_COACH_ORIGIN_CANON.md",
+      "sha": "bec3426f1ae3292a279b5c70db6c8f9937b2e27a"
+    },
+    {
+      "path": "upstream-parent/docs/PARENT_SIDE_SEKRET_COACH_CANON.md",
+      "sha": "f5fb6e4df51db83b2e14efc7f74855378122a152"
+    },
+    {
+      "path": "upstream-parent/docs/PARENT_WINDOW_CONSENT_CONTRACT.md",
+      "sha": "108e556ac8dfc75aecb03da9a957a0f323145379"
+    },
+    {
+      "path": "upstream-parent/screens/ParentApprovalsScreen.tsx",
+      "sha": "d960c5a7689cac7618762090382b0d8e2b75d5ba"
+    },
+    {
+      "path": "upstream-parent/screens/ParentBridgeScreen.tsx",
+      "sha": "c03d4c119346dacc64067583a5a60589f7e4f435"
+    },
+    {
+      "path": "upstream-parent/screens/ParentCircleScreen.tsx",
+      "sha": "89a57067a8581d67f2cd38377d85fd2b1159b5a3"
+    },
+    {
+      "path": "upstream-parent/screens/ParentPagesScreen.tsx",
+      "sha": "58317afff1287bf19a13272c529ed1f82a2eb9a8"
+    },
+    {
+      "path": "upstream-parent/screens/ParentRoomScreen.tsx",
+      "sha": "c676e5baa3c3b38ccf166bfa9940e614ae7bded6"
+    },
+    {
+      "path": "upstream-parent/src/parent/assets.ts",
+      "sha": "7fda4f9ba9031f4ac6fb1cd92306e745600dcde5"
+    },
+    {
+      "path": "upstream-parent/src/parent/components/index.ts",
+      "sha": "1e649aa0474681b6b1c7596f50a2fd5bbb8b734b"
+    },
+    {
+      "path": "upstream-parent/src/parent/features/calm/ParentCalmScreen.tsx",
+      "sha": "353060b2a38b5e32ba89fe1a8d4d7ba8f2d2446c"
+    },
+    {
+      "path": "upstream-parent/src/parent/features/period-calendar/ParentPeriodCalendarScreen.tsx",
+      "sha": "9d9c35b63cef1520bce6dc38b9e4d14e8b923803"
+    },
+    {
+      "path": "upstream-parent/src/parent/features/repair/ParentRepairScreen.tsx",
+      "sha": "f53bd90281d9ed2a9fe62256139c80cac99308fe"
+    },
+    {
+      "path": "upstream-parent/src/parent/features/s2tell/ParentS2TellInboxScreen.tsx",
+      "sha": "1a07d0d532ce3fc36f45b2d2918f272ba41f0247"
+    },
+    {
+      "path": "upstream-parent/src/parent/features/sekret/ParentSekretCoachScreen.tsx",
+      "sha": "bbc876e187f3f312854d860e17e64a19c8cd1d4d"
+    },
+    {
+      "path": "upstream-parent/src/parent/features/voice/ParentVoiceReflectionScreen.tsx",
+      "sha": "fbfdc743c7fbe2cb421d5570937fa9ba934253f4"
+    },
+    {
+      "path": "upstream-parent/src/parent/hooks/index.ts",
+      "sha": "ae6131c492c9172c74b609004b2091b73e8e12dc"
+    },
+    {
+      "path": "upstream-parent/src/parent/index.ts",
+      "sha": "a3820983e25cc4558f085b9dbe39f2487de1b529"
+    },
+    {
+      "path": "upstream-parent/src/parent/navigation/index.ts",
+      "sha": "7ddde9cc8e06b6e2c1ef79b83eccc084caf96fbe"
+    },
+    {
+      "path": "upstream-parent/src/parent/routes.ts",
+      "sha": "66ed1bfa67f1c6daf0b60f2d0f3adc772c1309b0"
+    },
+    {
+      "path": "upstream-parent/src/parent/screens/index.ts",
+      "sha": "e9d758bae308e44c27cc45abc45b8dbdc0154e78"
+    },
+    {
+      "path": "upstream-parent/src/parent/services/index.ts",
+      "sha": "64b75e3873b2d321703f351fe38c6153c3d00d1b"
+    },
+    {
+      "path": "upstream-parent/src/shared/ai/index.ts",
+      "sha": "64b75e3873b2d321703f351fe38c6153c3d00d1b"
+    },
+    {
+      "path": "upstream-parent/src/shared/components/index.ts",
+      "sha": "8e3b1855b3821baa51cd08e9622d1cc1c65e1b6b"
+    },
+    {
+      "path": "upstream-parent/src/shared/features/period-calendar/CalendarGrid.tsx",
+      "sha": "6dd1a6addc0958b5b72e21670a0d30138acf95e2"
+    },
+    {
+      "path": "upstream-parent/src/shared/features/period-calendar/dateHelpers.ts",
+      "sha": "0a805cc0e9d4577e003c5184f6eba2790fa9a72c"
+    },
+    {
+      "path": "upstream-parent/src/shared/features/period-calendar/types.ts",
+      "sha": "9c69056c7776041729c63b23770e6afb53103c1a"
+    },
+    {
+      "path": "upstream-parent/src/shared/index.ts",
+      "sha": "a3820983e25cc4558f085b9dbe39f2487de1b529"
+    },
+    {
+      "path": "upstream-parent/src/shared/routes.ts",
+      "sha": "177453bfdfdeb82ef88c1caf5d0a17f51d0215f3"
+    },
+    {
+      "path": "upstream-parent/src/shared/safety/index.ts",
+      "sha": "9f12d9cf21efa48293935e4a22df5f45f15f2b9f"
+    },
+    {
+      "path": "upstream-parent/src/shared/supabase/index.ts",
+      "sha": "fb7ac85b4631a93ca6a387fc4d99f7b301182f66"
+    },
+    {
+      "path": "upstream-parent/src/shared/theme/index.ts",
+      "sha": "a9555c3b94ee5eb6ad2f63636d84438d7c48e7cb"
+    },
+    {
+      "path": "upstream-parent/src/shared/types/index.ts",
+      "sha": "b3c391aea4efef2663df45a17736ae4c34f5642e"
+    },
+    {
+      "path": "upstream-parent/src/shared/utils/index.ts",
+      "sha": "00696e2f8c2bd84b6b37dd7e69779dfaeaf28ccb"
+    }
+  ]
+}
