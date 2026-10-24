@@ -1,0 +1,10 @@
+{
+  "name": "sekret-bip-parent-side",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Standalone privacy-safe parent entry and source export",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build:pages": "npm test"
+  }
+}
