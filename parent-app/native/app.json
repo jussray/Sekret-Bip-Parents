@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Se'kret Bip Parent",
+    "slug": "sekret-bip-parents",
+    "scheme": "sekretbipparent",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "plugins": [
+      "expo-router"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.sekretbip.parent",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.sekretbip.parent"
+    },
+    "web": {
+      "bundler": "metro",
+      "name": "Se'kret Bip Parent",
+      "shortName": "Bip Parent"
+    }
+  }
+}
