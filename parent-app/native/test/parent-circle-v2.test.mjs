@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { mapParentCommunityFeedRow } from '../src/features/circle/repository.ts';
+import { mapParentCommunityFeedRow } from '../src/features/circle/mapping.ts';
 
 const root = resolve(import.meta.dirname, '..');
 const read = file => readFileSync(resolve(root, file), 'utf8');

@@ -1,49 +1,14 @@
 import { getParentClient } from '../auth/client.ts';
 import type {
-  ParentCommunityFeedRow,
   ParentCommunityPost,
   ParentCommunityReactionCounts,
   ParentCommunityReactionKey,
 } from './types.ts';
-
-const EMPTY_REACTIONS: ParentCommunityReactionCounts = {
-  beenThere: 0,
-  solidarity: 0,
-  reminder: 0,
-  needed: 0,
-  strength: 0,
-};
-
-export class ParentCommunityUnavailableError extends Error {
-  constructor() {
-    super('Parent Circle V2 is not activated on the server yet.');
-    this.name = 'ParentCommunityUnavailableError';
-  }
-}
-
-function normalizeReactionCounts(value: unknown): ParentCommunityReactionCounts {
-  const source = value && typeof value === 'object'
-    ? value as Partial<Record<ParentCommunityReactionKey, unknown>>
-    : {};
-  return {
-    beenThere: Number(source.beenThere ?? 0),
-    solidarity: Number(source.solidarity ?? 0),
-    reminder: Number(source.reminder ?? 0),
-    needed: Number(source.needed ?? 0),
-    strength: Number(source.strength ?? 0),
-  };
-}
-
-export function mapParentCommunityFeedRow(row: ParentCommunityFeedRow): ParentCommunityPost {
-  return {
-    id: row.post_id,
-    text: row.post_text,
-    createdAt: row.created_at,
-    circleTag: row.circle_tag ?? undefined,
-    quietRepliesCount: Number(row.quiet_reply_count ?? 0),
-    reactions: normalizeReactionCounts(row.reaction_counts),
-  };
-}
+import {
+  EMPTY_REACTIONS,
+  mapParentCommunityFeedRow,
+  normalizeReactionCounts,
+} from './mapping.ts';
 
 async function requirePermanentParentClient() {
   const client = getParentClient();
