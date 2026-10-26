@@ -102,11 +102,13 @@ test('parent layout hides tabs unless verified, clears authority on signout', ()
   assert.doesNotMatch(source, /service_role\s*=\s*['"]|sb_secret_[a-z0-9]/i);
 });
 
-test('separate public Cloudflare build stays welcome-only', () => {
-  const build = read('../../scripts/build.mjs');
-  assert.match(build, /PUBLIC_FRONT_DOOR_FILES/);
-  const html = read('../../public/index.html');
-  assert.doesNotMatch(html, /<script\b|data-topic=|reflection-input/);
+test('native runtime remains independent from the public parent entry site', () => {
+  const layout = read('app/_layout.tsx');
+  assert.doesNotMatch(layout, /site\/|public\/|window\.location|document\./);
+  const client = read('src/features/auth/client.ts');
+  assert.match(client, /EXPO_PUBLIC_SUPABASE_URL/);
+  assert.match(client, /EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY/);
+  assert.doesNotMatch(client, /service_role|sb_secret_/i);
 });
 
 test('verification review has an explicit setup handoff, never a local approval override', () => {
