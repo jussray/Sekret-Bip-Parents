@@ -23,3 +23,10 @@ This is a **source export**, not a production cutover.
 - The public parent front door remains separate from authenticated Parent Window functionality.
 
 Run the root repository tests to verify every exported file still matches its original Git blob SHA.
+
+
+## Shared backend authority
+
+The SQL files under this export are **source/provenance evidence only**. They are not an active parent-repo migration lane and must not be applied from this repository.
+
+Canonical Supabase schema/RLS/RPC ownership remains in `jussray/Sekret-Bip`; the standalone parent runtime consumes that shared contract.

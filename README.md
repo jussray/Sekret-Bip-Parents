@@ -36,4 +36,6 @@ For visual inspection run any local static server pointed at `site/` (e.g. `pyth
 
 ## Source ownership
 
-Teen app and shared API continue to be owned by `jussray/Sekret-Bip`. Keep the two repos coordinated through documented parent API contracts instead of copying teen account stores or secrets.
+The parent product/runtime is owned here. **The canonical shared backend remains `jussray/Sekret-Bip`**: Supabase schema, migrations, RLS, auth authority, and cross-product RPCs are repaired and proven there first. This repo consumes those contracts and must not create a shadow backend or active migration lane.
+
+Source exported from Main Bip may be preserved here with provenance and adapted into parent-specific UI/runtime code. Exported SQL remains evidence only. See `docs/SHARED_BACKEND_AUTHORITY.md`.
