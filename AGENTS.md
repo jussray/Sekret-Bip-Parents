@@ -17,3 +17,14 @@ This repository is the dedicated **parent-side** implementation repository for S
 - On changes to `site/`, run `npm test` and `npm run build:pages` (they require only Node.js built-ins).
 - Check CI against the exact commit head and the actual Cloudflare Pages production deployment. Do not claim private features or child-linked data function based on a static page or HTTP 200.
 - Use branch/commit provenance, source repo main revision, deployment target, and rollback plan for all cross-repo work.
+
+## Reds rule — implant on sight (standing law, installed 2026-10-26)
+
+Any error or red that surfaces in this repository — CI/Actions failure,
+failing test, broken build, runtime defect — is diagnosed and fixed in the
+same flow it is seen, with the smallest reversible change, landed through
+this repo's normal gate and verified green on the exact head. A seen red is
+never parked as a report. Never merge over a blocked mandatory gate or a
+red exact head. A credential- or founder-gated red gets a full diagnosis
+plus the one unblocking action named — never silence, never a faked fix.
+Full charter: `.github/agents/reds-implant.agent.md`.
