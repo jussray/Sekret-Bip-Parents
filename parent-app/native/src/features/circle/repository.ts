@@ -1,10 +1,10 @@
-import { getParentClient } from '../auth/client';
+import { getParentClient } from '../auth/client.ts';
 import type {
   ParentCommunityFeedRow,
   ParentCommunityPost,
   ParentCommunityReactionCounts,
   ParentCommunityReactionKey,
-} from './types';
+} from './types.ts';
 
 const EMPTY_REACTIONS: ParentCommunityReactionCounts = {
   beenThere: 0,
