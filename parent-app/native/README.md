@@ -37,4 +37,6 @@ The Circle tab is now wired to the reviewed redacted Parent Community V2 RPC con
 
 Production database status at integration time: the five V2 Parent Community RPCs were **not present**. The app therefore fails closed with a server-not-activated notice and does not fall back to raw tables, legacy parent history, fake production posts, or teen data.
 
-Activating the two reviewed SQL migrations remains a separate founder-approved database change.
+The five RPCs belong to the **canonical Main Bip backend** in `jussray/Sekret-Bip`. This runtime consumes that contract; it does not own or apply a second copy of the schema.
+
+Activating shared SQL remains a separate founder-approved database change executed from the canonical Main Bip backend workflow.
