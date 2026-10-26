@@ -1,5 +1,6 @@
 import { getParentClient } from '../auth/client.ts';
 import type {
+  ParentCommunityFeedRow,
   ParentCommunityPost,
   ParentCommunityReactionCounts,
   ParentCommunityReactionKey,
@@ -9,6 +10,13 @@ import {
   mapParentCommunityFeedRow,
   normalizeReactionCounts,
 } from './mapping.ts';
+
+export class ParentCommunityUnavailableError extends Error {
+  constructor() {
+    super('Parent Circle V2 is not activated on the server yet.');
+    this.name = 'ParentCommunityUnavailableError';
+  }
+}
 
 async function requirePermanentParentClient() {
   const client = getParentClient();
