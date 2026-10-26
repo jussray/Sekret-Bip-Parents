@@ -1,4 +1,4 @@
-import 'react-native-url-polyfill/auto';
+import 'react-native-url-polyfill/auto.js';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 // Credential-free source. The publishable key is explicitly non-privileged;
