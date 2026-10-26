@@ -1,0 +1,40 @@
+{
+  "name": "sekret-bip-parent-native",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "web": "expo start --web",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.mjs",
+    "build:web": "expo export --platform web",
+    "check": "npm run test && npm run typecheck && npm run build:web",
+    "test:rls:staging": "node tools/staging-bridge-rls-smoke.mjs"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~56.0.15",
+    "@supabase/supabase-js": "2.74.0",
+    "expo": "56.0.12",
+    "expo-constants": "56.0.18",
+    "expo-linear-gradient": "56.0.4",
+    "expo-linking": "56.0.14",
+    "expo-router": "56.2.11",
+    "expo-status-bar": "56.0.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-native": "0.85.3",
+    "react-native-safe-area-context": "5.7.0",
+    "react-native-screens": "4.25.2",
+    "react-native-url-polyfill": "2.0.0",
+    "react-native-web": "0.21.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.0",
+    "typescript": "~5.8.0"
+  }
+}
