@@ -1,0 +1,77 @@
+{
+  "schema": "sekret-bip-parent-source-export/v2",
+  "status": "source-only-not-runnable-not-applied",
+  "exported_at": "2026-10-26",
+  "source": {
+    "repository": "jussray/Sekret-Bip",
+    "pull_request": 1189,
+    "head": "b1e80d2840d5a73df1291b11029a31620c009633",
+    "title": "fix(parent-circle): cut over to redacted V2 guardian RPCs"
+  },
+  "destination": {
+    "repository": "jussray/Sekret-Bip-Parents",
+    "base_commit": "fcaab1f095e232b4acb713ed7d701a05f201fb3f",
+    "branch": "export/parent-circle-v2-20261026"
+  },
+  "scope": "Parent Circle V2 only",
+  "boundaries": {
+    "production_deploy_authorized": false,
+    "production_migration_apply_authorized": false,
+    "secret_copy_authorized": false,
+    "account_or_user_data_exported": false,
+    "teen_routes_exported": false,
+    "source_bundle_runtime_authority": false
+  },
+  "notes": [
+    "The two SQL migrations are preserved as reviewed source only. This export does not apply them to Supabase.",
+    "src/types/index.ts is preserved only as an exact source witness because PR #1189 changed ParentCirclePost. Future parent runtime integration should extract the parent-only contract rather than adopting unrelated teen types.",
+    "The bundle does not claim standalone compilation. It preserves the exact reviewed source slice so the dedicated parent repository can own future integration."
+  ],
+  "files": [
+    {
+      "source_path": "app/(parent)/circle/[id].tsx",
+      "export_path": "parent-app/exports/parent-circle-v2-20261025/source/app/(parent)/circle/[id].tsx",
+      "source_blob_sha": "98eb7093fc293de42133b2dc25fdd99fe95a0e4e"
+    },
+    {
+      "source_path": "app/(parent)/circle/feed.tsx",
+      "export_path": "parent-app/exports/parent-circle-v2-20261025/source/app/(parent)/circle/feed.tsx",
+      "source_blob_sha": "f91ab4eb02bb7bea440ff76a7a16d126c0241d73"
+    },
+    {
+      "source_path": "screens/ParentCircleScreen.tsx",
+      "export_path": "parent-app/exports/parent-circle-v2-20261025/source/screens/ParentCircleScreen.tsx",
+      "source_blob_sha": "8ac54f9ebfb06b09174936432868409cca0c7e37"
+    },
+    {
+      "source_path": "src/features/circle/parentCommunityRepository.ts",
+      "export_path": "parent-app/exports/parent-circle-v2-20261025/source/src/features/circle/parentCommunityRepository.ts",
+      "source_blob_sha": "29865dbeccb753dd6f31ad968991e1b39667cc48"
+    },
+    {
+      "source_path": "src/types/index.ts",
+      "export_path": "parent-app/exports/parent-circle-v2-20261025/source/src/types/index.ts",
+      "source_blob_sha": "2b957a47aa95e2430520fd57fe5c611428bdade5"
+    },
+    {
+      "source_path": "supabase/migrations/20261025025400_parent_community_reaction_kind_values.sql",
+      "export_path": "parent-app/exports/parent-circle-v2-20261025/source/supabase/migrations/20261025025400_parent_community_reaction_kind_values.sql",
+      "source_blob_sha": "6dcad25f977c69d13683636b61939c57af57abea"
+    },
+    {
+      "source_path": "supabase/migrations/20261025025500_parent_community_v2_rpc_cutover.sql",
+      "export_path": "parent-app/exports/parent-circle-v2-20261025/source/supabase/migrations/20261025025500_parent_community_v2_rpc_cutover.sql",
+      "source_blob_sha": "b51f40dc5c4462194407a3f9799ef4c8295d424a"
+    },
+    {
+      "source_path": "test/feature-flow-contracts.test.mjs",
+      "export_path": "parent-app/exports/parent-circle-v2-20261025/source/test/feature-flow-contracts.test.mjs",
+      "source_blob_sha": "55080a707f358629537e89b60bee6719cf5c8f2f"
+    },
+    {
+      "source_path": "test/parent-community-v2-cutover.test.mjs",
+      "export_path": "parent-app/exports/parent-circle-v2-20261025/source/test/parent-community-v2-cutover.test.mjs",
+      "source_blob_sha": "019df9dedc4a7f6a2de72b70fd9ab6dde2200ee6"
+    }
+  ]
+}
