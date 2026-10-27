@@ -2,10 +2,15 @@
   "schemaVersion": "1.0",
   "repository": "jussray/Sekret-Bip-Parents",
   "portfolioAuthority": "jussray/founder-control-room",
+  "runtime": {
+    "primary": "cloudflare-pages-static",
+    "cloudflareWorker": false
+  },
   "logpush": {
-    "participates": true,
+    "participates": false,
     "scope": "account",
     "dataset": "workers_trace_events",
+    "reason": "Current main is a static Cloudflare Pages site with no Functions, _worker.js, or Wrangler Worker runtime.",
     "providerMutationAuthority": "founder-control-room-only",
     "credentialsStoredHere": false
   },
