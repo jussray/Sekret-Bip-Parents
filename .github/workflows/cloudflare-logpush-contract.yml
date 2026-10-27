@@ -1,4 +1,4 @@
-name: Cloudflare Logpush Participation Contract
+name: Cloudflare Logpush Applicability Contract
 
 on:
   pull_request:
@@ -38,7 +38,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24
-      - name: Verify participation contract
+      - name: Verify applicability contract
         shell: bash
         run: |
           node <<'NODE'
@@ -49,16 +49,18 @@ jobs:
           if (c.schemaVersion !== '1.0') errors.push('schemaVersion');
           if (c.repository !== process.env.GITHUB_REPOSITORY) errors.push('repository');
           if (c.portfolioAuthority !== 'jussray/founder-control-room') errors.push('portfolioAuthority');
-          if (c.logpush?.participates !== true) errors.push('participates');
+          if (c.logpush?.participates !== false) errors.push('participates');
+          if (c.runtime?.cloudflareWorker !== false) errors.push('cloudflareWorker');
           if (c.logpush?.scope !== 'account') errors.push('scope');
           if (c.logpush?.dataset !== 'workers_trace_events') errors.push('dataset');
           if (c.logpush?.providerMutationAuthority !== 'founder-control-room-only') errors.push('providerMutationAuthority');
           if (c.logpush?.credentialsStoredHere !== false) errors.push('credentialsStoredHere');
+          if (!String(c.logpush?.reason || '').trim()) errors.push('reason');
           if (c.evidence?.contractPassDoesNotProveProviderActivation !== true) errors.push('evidenceBoundary');
           if (c.evidence?.providerVerificationRequired !== true) errors.push('providerVerificationRequired');
           if (c.evidence?.destinationDeliveryVerificationRequired !== true) errors.push('destinationDeliveryVerificationRequired');
           const raw = fs.readFileSync(path, 'utf8');
           if (/api[_-]?token|secret\s*[":=]|destination_conf/i.test(raw)) errors.push('secretMaterial');
-          if (errors.length) { console.error('Logpush participation contract failed:', errors.join(', ')); process.exit(1); }
-          console.log(JSON.stringify({ok:true,repository:c.repository,dataset:c.logpush.dataset,providerMutation:false}));
+          if (errors.length) { console.error('Logpush applicability contract failed:', errors.join(', ')); process.exit(1); }
+          console.log(JSON.stringify({ok:true,repository:c.repository,participates:false,dataset:c.logpush.dataset,providerMutation:false}));
           NODE
