@@ -1,0 +1,32 @@
+name: Parent native preview checks
+on:
+  pull_request:
+    paths:
+      - 'parent-app/native/**'
+      - '.github/workflows/parent-native-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-preview:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: parent-app/native
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install preview dependencies
+        run: npm install --no-audit --no-fund
+      - name: Test private-route negative cases
+        run: npm test
+      - name: Typecheck independent native app
+        run: npm run typecheck
+      - name: Build independent Expo web preview
+        run: npm run build:web
+        env:
+          EXPO_NO_TELEMETRY: '1'
+      - name: Prove generated web entry
+        run: test -s dist/index.html
