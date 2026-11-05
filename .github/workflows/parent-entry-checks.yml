@@ -4,15 +4,15 @@ on:
     branches: ['feat/parent-side-export-20261022', main]
     paths: ['site/**', 'tests/**', 'package.json', '.github/workflows/parent-entry-checks.yml', 'README.md', 'AGENTS.md']
   pull_request:
-    paths: ['site/**', 'tests/**', 'package.json', 'README.md', 'AGENTS.md']
+    paths: ['site/**', 'tests/**', 'package.json', '.github/workflows/parent-entry-checks.yml', 'README.md', 'AGENTS.md']
 permissions:
   contents: read
 jobs:
   static-contract:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
       - run: npm test
