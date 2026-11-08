@@ -1,10 +1,16 @@
 {
   "name": "sekret-bip-parent-side",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
+  "type": "module",
   "description": "Standalone privacy-safe parent entry and source export",
   "scripts": {
+    "build": "node scripts/build.mjs",
     "test": "node --test tests/*.test.mjs",
-    "build:pages": "npm test"
+    "build:pages": "npm test",
+    "check": "npm run test && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
