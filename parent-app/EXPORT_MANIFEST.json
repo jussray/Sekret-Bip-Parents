@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "status": "source-export-not-buildable",
+  "exported_at": "2026-10-22",
+  "source": {
+    "repository": "jussray/Sekret-Bip",
+    "ref": "main",
+    "commit": "015ac2d39bf5230530996880ea3cfa4f4707077b"
+  },
+  "destination": {
+    "repository": "jussray/Sekret-Bip-Parents",
+    "branch": "feat/parent-side-export-20261022",
+    "base_commit": "be7a0e9b073c7b26b7e7cc131fab318137ecdd8d"
+  },
+  "files": [
+    {
+      "path": "parent-app/exported/app/(parent)/_layout.tsx",
+      "sha": "a336c77a6fd5b435111d082bfda314114fd450c2"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/approvals.tsx",
+      "sha": "22c215e028de91f240741c323e4a646773013848"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/bip-jr-study.tsx",
+      "sha": "5af5522fc889e726222f67527756e6077db47af8"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/bip-jr.tsx",
+      "sha": "b2055e6ea61c2a9ac6a284808380c765b9e85201"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/bridge.tsx",
+      "sha": "081200f270e09a0563ade0797c7ebd881bfc76fb"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/calm.tsx",
+      "sha": "ef0af4f52e881cb7c5d3ed0fb2a94a6fd6ebe9a3"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/circle/[id].tsx",
+      "sha": "61e2253c1f66c6cfe8a39e4f78d82c7113d07446"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/circle/feed.tsx",
+      "sha": "0cc8755894b064838adc955122ab9a8c8b2d74a4"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/circle/index.tsx",
+      "sha": "1a4557486fc2807b2cbc2a72978426706873a294"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/circle/weather.tsx",
+      "sha": "9d736177f1483b2bef07c411f3b94f49726cce8b"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/dashboard.tsx",
+      "sha": "25613d57016ec74e27eb29b385a17ee6820ba7b4"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/growth.tsx",
+      "sha": "4cb1c7f98168e17983f4a614c6c58bfdcc7e4634"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/more.tsx",
+      "sha": "cfd6c848952d61a826dea5b624366fb85b599153"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/pages.tsx",
+      "sha": "f846b82c7f3eef62c1d4c8c8d3d91ffcfe9c0e04"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/period-calendar.tsx",
+      "sha": "66e0ad0780312addc634c84daacc68cd4b153f65"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/profile.tsx",
+      "sha": "e66fe32240b0d45211f5a01efaaa050d18fd9263"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/repair.tsx",
+      "sha": "6c032c35f3206ecf96c473ea77e85693bd1981b6"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/resources.tsx",
+      "sha": "85939ad73ffb7c6286736a3c720b11fda83dcab7"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/room.tsx",
+      "sha": "df0621da059918c1e3337fa58df15bd4af1e601b"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/s2tell.tsx",
+      "sha": "c9e571d879bd933dd50a2f43f3c037e373cafafa"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/sekret.tsx",
+      "sha": "3f9bed3202068141ae476cc3c937e7d746e5ead3"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/settings.tsx",
+      "sha": "184bb12f7ba9b98d77434824819058617f2cf12c"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/teen-verification.tsx",
+      "sha": "454b1d310126bf41f763461734c0cf39bdd4becc"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/voicebip.tsx",
+      "sha": "84d52606d96b25566e1e59673a9d1c19e93d2270"
+    },
+    {
+      "path": "parent-app/exported/app/(parent)/voicereflect.tsx",
+      "sha": "7604537a45cffb8389e16cf1a3d692627cd0c444"
+    },
+    {
+      "path": "parent-app/exported/screens/ParentApprovalsScreen.tsx",
+      "sha": "d960c5a7689cac7618762090382b0d8e2b75d5ba"
+    },
+    {
+      "path": "parent-app/exported/screens/ParentBridgeScreen.tsx",
+      "sha": "c03d4c119346dacc64067583a5a60589f7e4f435"
+    },
+    {
+      "path": "parent-app/exported/screens/ParentCircleScreen.tsx",
+      "sha": "89a57067a8581d67f2cd38377d85fd2b1159b5a3"
+    },
+    {
+      "path": "parent-app/exported/screens/ParentPagesScreen.tsx",
+      "sha": "58317afff1287bf19a13272c529ed1f82a2eb9a8"
+    },
+    {
+      "path": "parent-app/exported/screens/ParentRoomScreen.tsx",
+      "sha": "c676e5baa3c3b38ccf166bfa9940e614ae7bded6"
+    },
+    {
+      "path": "parent-app/exported/src/bridge/types.ts",
+      "sha": "fdc7908f8d8f8db166e16a40c3ba813367054245"
+    },
+    {
+      "path": "parent-app/exported/src/parent/assets.ts",
+      "sha": "7fda4f9ba9031f4ac6fb1cd92306e745600dcde5"
+    },
+    {
+      "path": "parent-app/exported/src/parent/components/index.ts",
+      "sha": "1e649aa0474681b6b1c7596f50a2fd5bbb8b734b"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/calm/ParentCalmScreen.tsx",
+      "sha": "353060b2a38b5e32ba89fe1a8d4d7ba8f2d2446c"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/period-calendar/ParentPeriodCalendarScreen.tsx",
+      "sha": "9d9c35b63cef1520bce6dc38b9e4d14e8b923803"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/repair/ParentRepairScreen.tsx",
+      "sha": "f53bd90281d9ed2a9fe62256139c80cac99308fe"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/s2tell/ParentS2TellInboxScreen.tsx",
+      "sha": "1a07d0d532ce3fc36f45b2d2918f272ba41f0247"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/sekret/ParentSekretCoachScreen.tsx",
+      "sha": "bbc876e187f3f312854d860e17e64a19c8cd1d4d"
+    },
+    {
+      "path": "parent-app/exported/src/parent/features/voice/ParentVoiceReflectionScreen.tsx",
+      "sha": "fbfdc743c7fbe2cb421d5570937fa9ba934253f4"
+    },
+    {
+      "path": "parent-app/exported/src/parent/hooks/index.ts",
+      "sha": "ae6131c492c9172c74b609004b2091b73e8e12dc"
+    },
+    {
+      "path": "parent-app/exported/src/parent/index.ts",
+      "sha": "a3820983e25cc4558f085b9dbe39f2487de1b529"
+    },
+    {
+      "path": "parent-app/exported/src/parent/navigation/index.ts",
+      "sha": "7ddde9cc8e06b6e2c1ef79b83eccc084caf96fbe"
+    },
+    {
+      "path": "parent-app/exported/src/parent/routes.ts",
+      "sha": "66ed1bfa67f1c6daf0b60f2d0f3adc772c1309b0"
+    },
+    {
+      "path": "parent-app/exported/src/parent/screens/index.ts",
+      "sha": "e9d758bae308e44c27cc45abc45b8dbdc0154e78"
+    },
+    {
+      "path": "parent-app/exported/src/parent/services/index.ts",
+      "sha": "64b75e3873b2d321703f351fe38c6153c3d00d1b"
+    },
+    {
+      "path": "parent-app/exported/src/services/parentEntryState.ts",
+      "sha": "133817015a051213e54ed704a334226761886b62"
+    }
+  ],
+  "not_exported": [
+    "live teen or parent account data",
+    "secrets",
+    "shared runtime dependency closure",
+    "deployments",
+    "Supabase migrations"
+  ]
+}

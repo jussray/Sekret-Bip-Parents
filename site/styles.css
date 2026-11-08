@@ -1,0 +1,159 @@
+/* Se’kret Bip Parent Side — visual system (copy and behaviour unchanged).
+   Grammar: midnight base; violet, cyan and magenta light; gold reserved for focus;
+   condensed uppercase hero type; bold serif section heads; handwritten gold notes.
+   No webfonts: CSP is font-src 'self', so every stack is a system font. */
+
+:root{
+  color-scheme:dark;
+  --ink:#07061a;
+  --midnight:#0c0a26;
+  --violet:#8b5cf6;
+  --cyan:#22d3ee;
+  --magenta:#e879f9;
+  --gold:#f6c86a;
+  --txt:#f5f3ff;
+  --sub:#cfc7ea;
+  --line:rgba(167,139,250,.28);
+  --display:Impact,"Haettenschweiler","Franklin Gothic Medium Cond","Arial Narrow Bold","Arial Narrow",sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --hand:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;background:var(--ink);color:var(--txt);font:16px/1.6 var(--body)}
+button,textarea{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:6px}
+a{color:inherit;text-decoration:none}
+
+.skip{position:absolute;left:-999px;top:10px;z-index:99}
+.skip:focus{left:16px;background:#fff;color:#121020;padding:8px}
+
+/* Background: layered violet/cyan/magenta light with a slow star drift */
+.sky{pointer-events:none;position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 10% 12%,rgba(139,92,246,.38),transparent 38%),radial-gradient(ellipse at 92% 8%,rgba(34,211,238,.20),transparent 40%),radial-gradient(ellipse at 55% 100%,rgba(232,121,249,.22),transparent 42%),var(--ink)}
+.sky:after{content:"";position:absolute;inset:0;opacity:.22;background-image:radial-gradient(#ffffffb0 1px,transparent 1.2px),radial-gradient(#67e8f9a0 1px,transparent 1.2px),radial-gradient(#f0abfc90 1px,transparent 1.2px);background-size:97px 113px,149px 171px,211px 233px;animation:drift 60s linear infinite}
+@keyframes drift{from{background-position:0 0,0 0,0 0}to{background-position:-400px 600px,300px -500px,-500px 400px}}
+
+.shell{max-width:1260px;margin:auto;padding:0 28px}
+
+/* Top bar */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0 18px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:14px;font:900 19px/1.1 var(--body);letter-spacing:.12em}
+.brand b{color:var(--cyan)}
+.brand small{display:block;margin-top:6px;font-size:9px;letter-spacing:.32em;color:var(--sub);font-weight:700}
+.brandmark{width:46px;height:46px;display:grid;place-items:center;border:1px solid rgba(103,232,249,.55);border-radius:14px;background:linear-gradient(135deg,rgba(139,92,246,.42),rgba(34,211,238,.14));box-shadow:0 0 28px rgba(34,211,238,.25);font:27px var(--serif);color:var(--txt)}
+.brandmark span{font-size:12px;margin-left:-8px;color:var(--magenta)}
+.header-status{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--sub)}
+.header-status i{height:8px;width:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+.entry-link{font-size:13px;font-weight:600;white-space:nowrap;color:#e0fbff;border:1px solid rgba(34,211,238,.45);padding:10px 18px;border-radius:30px;background:rgba(34,211,238,.08)}
+
+/* Section navigation */
+.nav{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:18px 0}
+.nav button{min-height:44px;border:1px solid transparent;border-radius:30px;color:var(--sub);padding:9px 20px;background:transparent;transition:background .2s,color .2s,border-color .2s,box-shadow .2s}
+.nav button:hover{color:#fff;border-color:rgba(232,121,249,.5)}
+.nav button.active{color:#fff;background:linear-gradient(120deg,rgba(139,92,246,.45),rgba(232,121,249,.28));border-color:rgba(232,121,249,.7);box-shadow:0 0 24px rgba(232,121,249,.25)}
+.panel[hidden]{display:none}
+.panel{animation:enter .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Room (hero) */
+.room-scene{min-height:600px;position:relative;overflow:hidden;isolation:isolate;border:1px solid rgba(34,211,238,.28);border-radius:34px;box-shadow:0 30px 120px rgba(0,0,0,.6),0 0 90px rgba(139,92,246,.22);background:linear-gradient(95deg,rgba(7,6,26,.96) 0%,rgba(12,10,38,.82) 48%,rgba(30,12,56,.45) 100%),url("https://raw.githubusercontent.com/jussray/Sekret-Bip/main/assets/images/resized-bg/parent-space-splash.jpg") center/cover,linear-gradient(130deg,#1a1039,#2e244d)}
+.room-scene:after{content:"";z-index:-1;position:absolute;inset:0;background:radial-gradient(circle at 82% 28%,rgba(232,121,249,.35),transparent 30%),radial-gradient(circle at 12% 100%,rgba(34,211,238,.18),transparent 40%)}
+.moon{position:absolute;width:110px;height:110px;border-radius:50%;right:12%;top:14%;background:radial-gradient(circle at 35% 35%,#fff,#e9d5ff 55%,#a78bfa);box-shadow:0 0 90px 30px rgba(232,121,249,.35);opacity:.7;animation:float 9s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.room-glow{position:absolute;inset:0;background:linear-gradient(105deg,transparent 52%,rgba(34,211,238,.10) 70%,transparent 88%);animation:sweep 14s ease-in-out infinite}
+@keyframes sweep{0%,100%{opacity:.6;transform:translateX(-4%)}50%{opacity:1;transform:translateX(4%)}}
+.scene-content{position:relative;z-index:1;padding:104px 7% 150px;max-width:860px}
+.eyebrow{text-transform:uppercase;color:var(--cyan);font-size:11px;letter-spacing:.3em;font-weight:800;margin:0 0 22px}
+
+/* Hero type: condensed uppercase display, with a serif italic aside */
+.scene-content h1,.inner h1{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(58px,9vw,132px);line-height:.92;letter-spacing:.005em;margin:0 0 26px;color:var(--txt);text-shadow:0 4px 40px rgba(232,121,249,.35)}
+.scene-content h1 em,.inner h1 em{display:block;font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;font-size:.4em;line-height:1.3;letter-spacing:0;color:var(--magenta);margin-top:14px}
+.lead{max-width:600px;font-size:18px;color:#e6dcf8;margin:0 0 30px}
+.hero-actions,.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.primary,.ghost{min-height:48px;padding:13px 22px;border-radius:30px;font-weight:700;font-size:15px;transition:transform .2s,box-shadow .2s,background .2s}
+/* Gold is reserved for the primary call to action (the focus of each screen) */
+.primary{background:linear-gradient(110deg,#f6c86a,#fde68a);color:#1a1030;border:0;box-shadow:0 10px 36px rgba(246,200,106,.28)}
+.ghost{background:rgba(12,10,38,.6);color:var(--txt);border:1px solid rgba(34,211,238,.5)}
+.primary:hover,.ghost:hover,.prompt:hover{transform:translateY(-2px)}
+
+/* Handwritten gold note */
+.polaroid{position:absolute;right:6%;bottom:44px;width:250px;transform:rotate(6deg);background:linear-gradient(160deg,#1c1640,#120e2c);border:1px solid rgba(246,200,106,.45);border-radius:6px;color:var(--gold);padding:20px 20px 24px;box-shadow:0 14px 40px rgba(0,0,0,.55)}
+.polaroid span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,200,106,.72)}
+.polaroid p{font:500 24px/1.25 var(--hand);margin:10px 0 8px;color:var(--gold)}
+.polaroid b{font:600 16px var(--hand);color:#fde68a}
+.scene-caption{position:absolute;bottom:20px;left:7%;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sub)}
+
+/* Cards */
+.below{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;margin:24px 0 64px}
+.glass{position:relative;background:linear-gradient(145deg,rgba(139,92,246,.20),rgba(12,10,38,.55));border:1px solid var(--line);box-shadow:inset 0 1px rgba(255,255,255,.08),0 16px 50px rgba(0,0,0,.35);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:24px;padding:30px}
+.glass:before{content:"";position:absolute;left:24px;right:24px;top:0;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--cyan),var(--magenta),transparent);opacity:.75}
+/* Bold serif section heads */
+.glass h2{font-family:var(--serif);font-weight:700;font-size:30px;line-height:1.2;letter-spacing:-.01em;margin:0 0 14px}
+.glass p{color:var(--sub)}
+.muted{font-size:13px!important;color:#b9b0d6!important}
+
+.moods{display:flex;gap:8px;flex-wrap:wrap}
+.moods button{min-height:44px;border:1px solid rgba(34,211,238,.35);border-radius:30px;background:rgba(34,211,238,.06);padding:10px 16px;color:var(--txt)}
+.moods button.selected{background:linear-gradient(120deg,var(--cyan),#a5f3fc);color:#07061a;border-color:transparent}
+.stamp{font-size:10px;letter-spacing:.26em;color:var(--magenta);font-weight:800}
+.intention h2{margin-top:10px}
+.text-button{min-height:44px;color:var(--cyan);background:none;border:0;padding:0;font-weight:700}
+
+/* Inner screens */
+.inner{min-height:62vh;padding:60px 4% 90px;max-width:1080px;margin:auto}
+.inner .lead{margin-bottom:40px}
+.inner h1{font-size:clamp(52px,7.4vw,108px)}
+.gate{display:flex;align-items:flex-start;gap:24px;margin:20px 0 26px}
+.gate-icon{font:54px var(--serif);color:var(--magenta);line-height:1}
+.link-primary{display:inline-block;margin:16px 0 0}
+.inner .glass+.glass{margin-top:22px}
+.row{margin-top:4px}
+textarea{width:100%;display:block;resize:vertical;min-height:200px;margin:16px 0 20px;background:rgba(7,6,26,.75);border:1px solid rgba(139,92,246,.55);border-radius:18px;color:var(--txt);padding:20px;font-size:16px}
+textarea::placeholder{color:#8f83b3}
+textarea:focus{border-color:var(--gold)}
+.prompt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px}
+.prompt{text-align:left;color:var(--txt);min-height:170px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;transition:transform .2s}
+.prompt span{font-size:32px;color:var(--magenta);line-height:1}
+.prompt strong{font-family:var(--serif);font-weight:700;font-size:22px;line-height:1.25;margin:10px 0 4px}
+.prompt small{color:var(--cyan);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.advice p:last-child{font:500 21px/1.5 var(--serif);color:var(--txt)}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding:34px 0 60px;border-top:1px solid var(--line);font-size:12px;letter-spacing:.04em;color:#b8aed6}
+footer a{text-decoration:underline;text-underline-offset:3px}
+
+/* Mobile is designed for thumbs, not shrunk: scrollable section bar, stacked hero, full-width actions */
+@media(max-width:750px){
+  .shell{padding:0 16px}
+  .topbar{padding:16px 2px 14px;gap:12px}
+  .brand{font-size:14px;gap:10px}
+  .brandmark{width:40px;height:40px;font-size:24px}
+  .header-status{display:none}
+  .entry-link{font-size:12px;padding:9px 14px}
+  .nav{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-inline:16px;gap:6px;padding:12px 16px;margin:0 -16px;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav button{flex:0 0 auto;scroll-snap-align:start;padding:10px 16px;font-size:14px}
+  .room-scene{min-height:0;border-radius:26px}
+  .moon{display:none}
+  .scene-content{padding:56px 24px 28px;max-width:none}
+  .scene-content h1,.inner h1{font-size:clamp(54px,17vw,84px)}
+  .lead{font-size:16px;margin-bottom:24px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions button{width:100%}
+  .polaroid{position:relative;right:auto;bottom:auto;width:auto;max-width:280px;margin:0 24px 28px auto;transform:rotate(3deg)}
+  .scene-caption{position:relative;left:auto;bottom:auto;padding:0 24px 22px;font-size:10px}
+  .below{grid-template-columns:1fr;margin:18px 0 48px;gap:16px}
+  .glass{padding:24px 22px;border-radius:20px}
+  .glass h2{font-size:26px}
+  .inner{padding:36px 4px 60px}
+  .gate{flex-direction:column;gap:8px}
+  .prompt-grid{grid-template-columns:1fr}
+  .prompt{min-height:0}
+  footer{flex-direction:column;padding:26px 0 44px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+}

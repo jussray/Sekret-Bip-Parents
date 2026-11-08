@@ -1,14 +1,15 @@
 {
-  "name": "sekret-bip-parent-portal",
-  "version": "0.1.0",
+  "name": "sekret-bip-parent-side",
   "private": true,
-  "type": "module",
-  "description": "Standalone privacy-first parent portal for Se'kret Bip",
+  "version": "0.1.0",
+  "description": "Standalone privacy-safe parent entry and source export",
   "scripts": {
-    "build": "node scripts/build.mjs",
     "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "build:pages": "npm run check",
     "check": "npm run test && npm run build"
   },
+  "type": "module",
   "engines": {
     "node": ">=20"
   }
