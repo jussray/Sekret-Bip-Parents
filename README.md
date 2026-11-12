@@ -6,7 +6,8 @@ This repo supersedes its old legacy-archive designation **for new parent-only de
 
 ## What's here
 
-- `site/`: a small standalone, no-account, privacy-first parent entry site with Room, Coach prompts, unsaved Pages, and privacy explanations for Bridge and Parent Circle.
+- `public/`: welcome-only Parent Front Door with sign-up and sign-in links. The build copies only explicitly allowed static files to `dist/`.
+- `site/`: preserved older experimental parent entry with Room/Coach prompts and unsaved Pages; not a public deployment source.
 - `upstream-parent/`: source-only export of parent routes, parent-specific UI, onboarding, and consent contracts from `jussray/Sekret-Bip` (not independently buildable yet).
 - `PARENT_APP_ROLE.md`: repository purpose and boundaries.
 - `docs/PARENT_EXPORT_MANIFEST.md`: export provenance, scope and limitations.
@@ -21,13 +22,13 @@ npm test
 npm run build:pages
 ```
 
-For visual inspection run any local static server pointed at `site/` (e.g. `python3 -m http.server --directory site 8080`). No account credentials are collected by the entry site.
+For visual inspection build first, then serve `dist/` (e.g. `python3 -m http.server --directory dist 8080`). No parent or teen records are loaded by the front door.
 
 ## Cloudflare Pages contract
 
 - Project (planned): `sekret-bip-parents`.
 - Build command: `npm run build:pages`.
-- Build output directory: `site`.
+- Build output directory: `dist`. Verify the actual Cloudflare project configuration separately before release.
 - Custom domain: `parent.sekretbip.net` after deployment verification.
 
 ## Privacy and completion gates

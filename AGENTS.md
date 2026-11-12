@@ -7,14 +7,14 @@ This repository is the dedicated **parent-side** implementation repository for S
 - Target repo: `jussray/Sekret-Bip-Parents`; teen app remains `jussray/Sekret-Bip`.
 - Public-domain intent: `parent.sekretbip.net`; exact runtime state comes from Cloudflare and a production URL probe, not repository prose.
 - Parent source snapshot under `upstream-parent/` is **reference source**, not a standalone runnable app.
-- The independent `site/` builds an explicitly limited public parent entry site. Treat it as **not authenticated** and **not an authorized Parent Window**.
+- `public/` is the welcome-only front door and sole source for the `dist/` public build. The earlier `site/` remains preserved historical source and is never shipped in `dist/`. Neither grants authenticated Parent Window access.
 - Do not import unrelated teen routes, private journals, private voice, companion chat/memory, private statistics or real account data.
 - No secrets, privileged tokens, RLS bypass, parent surveillance, link-by-presence access, or age-gate bypass.
 - A parent link is not blanket teen-content authorization. Auth, RLS, recipient, item, and revocation checks are mandatory before any shared content is ever exposed.
 - Preserve the historical legacy files and instructions. Do not delete, merge, deploy or change unrelated products without exact authorization; use verified deployment gates.
 
 ## Verification
-- On changes to `site/`, run `npm test` and `npm run build:pages` (they require only Node.js built-ins).
+- On changes to `public/`, `site/`, or the build, run `npm test` and `npm run build:pages`; verify `dist/` contains only approved welcome-only files.
 - Check CI against the exact commit head and the actual Cloudflare Pages production deployment. Do not claim private features or child-linked data function based on a static page or HTTP 200.
 - Use branch/commit provenance, source repo main revision, deployment target, and rollback plan for all cross-repo work.
 

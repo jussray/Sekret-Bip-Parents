@@ -5,6 +5,12 @@
   "description": "Standalone privacy-safe parent entry and source export",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "build:pages": "npm test"
+    "build": "node scripts/build.mjs",
+    "build:pages": "npm run check",
+    "check": "npm run test && npm run build"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
   }
 }
