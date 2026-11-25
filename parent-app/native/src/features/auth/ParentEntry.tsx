@@ -3,6 +3,7 @@ import { ActivityIndicator, Linking, Pressable, StyleSheet, Text, TextInput, Vie
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getParentClient } from './client';
+import { isParentRegistrationOpen } from './parentRegistrationGate';
 import type { EntryScreen } from './entryDecision';
 import { palette } from '../../theme';
 
@@ -34,6 +35,10 @@ export function ParentEntry({ screen, onSelect, onRefresh, onSignOut }: Props) {
     setMessage('');
     try {
       if (screen === 'signup') {
+        if (!(await isParentRegistrationOpen(client))) {
+          setMessage('Parent registration is not open in this preview. Use the existing Se’kret Bip parent setup.');
+          return;
+        }
         const result = await client.auth.signUp({
           email: email.trim().toLowerCase(),
           password,
