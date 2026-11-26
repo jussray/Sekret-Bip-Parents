@@ -40,3 +40,9 @@ Production database status at integration time: the five V2 Parent Community RPC
 The five RPCs belong to the **canonical Main Bip backend** in `jussray/Sekret-Bip`. This runtime consumes that contract; it does not own or apply a second copy of the schema.
 
 Activating shared SQL remains a separate founder-approved database change executed from the canonical Main Bip backend workflow.
+
+## Parent registration rollout (draft integration)
+
+The native preview checks the canonical Se’kret Bip Supabase table `public.parent_form_feature_gates` for `name='parent_registration'` and `enabled=true` immediately before attempting a new preview signup. A missing migration, unavailable server, or malformed response blocks the **preview's signup form**; existing sign-in remains available.
+
+This is a **UI rollout control, not a Supabase Auth admission policy**. Do not claim that direct Auth API requests are blocked by this flag. Existing permanent-account, server-owned verified-guardian, link/recipient consent, and RLS checks stay authoritative. The canonical migration and activation/rollback runbook belong to `jussray/Sekret-Bip`, in `docs/PARENT_FORM_FEATURE_GATES.md`; this repository must not apply a duplicate schema.
